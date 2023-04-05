@@ -7,6 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                <Button Content="Song View" Command="{Binding SongViewCommand}"/>
+                <Button Content="Info View" Command="{Binding InfoViewCommand}"/>
+            </StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <ContentControl Grid.Column="0" Content="{Binding Path=CurrentViewLeft}"/>
+                <ContentControl Grid.Column="1" Content="{Binding Path=CurrentViewRight}"/>
+            </Grid>
+        </DockPanel>
     </Grid>
 </Window>
