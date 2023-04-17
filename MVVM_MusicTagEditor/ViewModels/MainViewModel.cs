@@ -21,6 +21,9 @@ namespace MVVM_MusicTagEditor.ViewModels
         /// </summary>
         private UserControl currentViewLeft;
         private UserControl currentViewRight;
+
+        private UserControl songView;
+        private UserControl infoView;
         #endregion
 
         #region ------------------------- Constructors, Destructors, Dispose, Clone -------------------------
@@ -34,6 +37,16 @@ namespace MVVM_MusicTagEditor.ViewModels
             //this.SettingsViewCommand = new ActionCommand(this.SettingsViewCommandExecute, this.SettingsViewCommandCanExecute);
             this.SongViewCommand = new ActionCommand(this.SongViewCommandExecute, this.SongViewCommandCanExecute);
             this.InfoViewCommand = new ActionCommand(this.InfoViewCommandExecute, this.InfoViewCommandCanExecute);
+
+            // Init songview and songviewmodel
+            this.songView = new SongView();
+            SongViewModel songViewModel = new SongViewModel(this.EventAggregator);
+            songView.DataContext = songViewModel;
+
+            // Init infoview and infoviewmodel
+            this.infoView = new InfoView();
+            InfoViewModel infoViewModel = new InfoViewModel(this.EventAggregator);
+            infoView.DataContext = infoViewModel;
         }
         #endregion
 
@@ -103,14 +116,8 @@ namespace MVVM_MusicTagEditor.ViewModels
         /// <param name="parameter">Data used by the command.</param>
         private void SongViewCommandExecute(object parameter)
         {
-            // Init view and viewmodel
-            SongView songView = new SongView();
-            SongViewModel songViewModel = new SongViewModel(this.EventAggregator);
-            songView.DataContext = songViewModel;
-            this.CurrentViewLeft = songView;
+            this.CurrentViewLeft = this.CurrentViewLeft == null ? this.songView : null;
         }
-
-
 
         private bool InfoViewCommandCanExecute(object parameter)
         {
@@ -119,11 +126,7 @@ namespace MVVM_MusicTagEditor.ViewModels
 
         private void InfoViewCommandExecute(object parameter)
         {
-            // Init view and viewmodel
-            InfoView infoView = new InfoView();
-            InfoViewModel infoViewModel = new InfoViewModel(this.EventAggregator);
-            infoView.DataContext = infoViewModel;
-            this.CurrentViewRight = infoView;
+            this.CurrentViewRight = this.CurrentViewRight == null ? this.infoView : null;
         }
         #endregion
     }

@@ -6,21 +6,16 @@
              xmlns:local="clr-namespace:MVVM_MusicTagEditor.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel>
-        <ListView ItemsSource="{Binding Songs}" ScrollViewer.CanContentScroll="False" MaxHeight="500">
+    <StackPanel x:Name="stackP">
+
+        <ListView ItemsSource="{Binding Songs}" SelectedItem="{Binding SelectedSong}" ScrollViewer.CanContentScroll="True"
+                  MaxHeight="{Binding ElementName=stackP, Path=ActualHeight}" KeyboardNavigation.DirectionalNavigation="Contained">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Title" Width="120" DisplayMemberBinding="{Binding Title}"/>
-                    <GridViewColumn Header="Album" Width="120" DisplayMemberBinding="{Binding AlbumName}"/>
-                    <GridViewColumn Header="Cover" Width="120">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Image Source="{Binding AlbumCover}" Width="80" Height="80"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding SongDisplay}" Header="Title - Artists"/>
                 </GridView>
             </ListView.View>
         </ListView>
+
     </StackPanel>
 </UserControl>

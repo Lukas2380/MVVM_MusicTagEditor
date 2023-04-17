@@ -5,12 +5,36 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MVVM_MusicTagEditor.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <DockPanel>
-        <StackPanel Margin="20" DockPanel.Dock="Top" Orientation="Horizontal">
-            <TextBox Width="100" Margin="3 5 3 5" Text="{Binding Path=Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox Width="100" Margin="0 5 3 5" Text="{Binding Path=AlbumName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+             d:DesignHeight="450" d:DesignWidth="800" x:Name="window">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" MaxHeight="{Binding }">
+        <StackPanel>
+            <Image Source="{Binding AlbumCover}" Margin="0 0 0 10" Width="150" Height="150" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+            
+            <Grid Margin="0 20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Vertical" Grid.Column="0">
+                    <Label Content="Title:" HorizontalAlignment="Left" Margin="0 0.2"/>
+                    <Label Content="Album: " HorizontalAlignment="Left" Margin="0 0.2"/>
+                    <Label Content="Artist(s): " HorizontalAlignment="Left" Margin="0 0.2"/>
+                    <Label Content="Year: " HorizontalAlignment="Left" Margin="0 0.2"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Grid.Column="1">
+                    <TextBox Width="200" HorizontalAlignment="Left" Text="{Binding Path=Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Width="200" HorizontalAlignment="Left" Text="{Binding Path=AlbumName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Width="200" HorizontalAlignment="Left" Text="{Binding Path=Artists, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <TextBox Width="200" HorizontalAlignment="Left" Text="{Binding Path=Year, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+            </Grid>
+
+            <TextBox Width="200" Height="200" TextWrapping="Wrap" Background="Gray" BorderBrush="Black" TextAlignment="Center" Text="{Binding Path=Lyrics, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <DockPanel>
+                <Button Margin="20" DockPanel.Dock="Bottom" Content="Save" Command="{Binding Path=SendDataCommand}" VerticalAlignment="Bottom"/>
+            </DockPanel>
+            <ScrollViewer/>
         </StackPanel>
-        <Button Margin="20" DockPanel.Dock="Bottom" Content="Save" Command="{Binding Path=SendDataCommand}" VerticalAlignment="Bottom"/>
-    </DockPanel>
+    </ScrollViewer>
 </UserControl>
