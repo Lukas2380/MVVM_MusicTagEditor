@@ -22,7 +22,6 @@ C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEdito
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Data.dll
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Microsoft.Practices.Prism.dll
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Microsoft.Xaml.Behaviors.dll
-C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\taglib-sharp.dll
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Common.pdb
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Data.pdb
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Microsoft.Practices.Prism.pdb
@@ -46,4 +45,7 @@ C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEdito
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\App.baml
-C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\de\MahApps.Metro.resources.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Id3.Net.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\JetBrains.Annotations.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Id3.Net.xml
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\JetBrains.Annotations.xml

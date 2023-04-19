@@ -12,16 +12,17 @@ namespace Data
         private string title;
         private string[] artists;
         private string albumName;
-        private int year;
+        private int? year;
         private BitmapImage albumCover;
         private BitmapSource albumCoversource;
         private string lyrics;
+        private string lyricist;
 
         #endregion
 
         #region ------------------------- Constructors, Destructors, Dispose, Clone ---------------------------------------
 
-        public Song(string title, string[] artists, string albumName, int year, BitmapImage albumCover, string lyrics)
+        public Song(string title, string[] artists, string albumName, int? year, BitmapImage albumCover, string lyrics, string lyricist)
         {
             this.title = title;
             this.artists = artists;
@@ -29,6 +30,7 @@ namespace Data
             this.year = year;
             this.albumCover = albumCover;
             this.lyrics = lyrics;
+            this.lyricist = lyricist;
         }
         #endregion
 
@@ -89,31 +91,18 @@ namespace Data
             }
         }
         
-        public string Year
+        public int? Year
         {
             get
             {
-                return this.year.ToString();
+                return this.year;
             }
             set
             {
-                int input = 0;
-                try
+                if (this.year != value)
                 {
-                    input = Convert.ToInt32(value);
-                    if (this.year != input)
-                    {
-                        this.albumName = value;
-                        OnPropertyChanged(nameof(this.albumName));
-                    }
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("Input string is not a sequence of digits.");
-                }
-                catch (OverflowException)
-                {
-                    Console.WriteLine("The number cannot fit in an Int32.");
+                    this.year = value;
+                    OnPropertyChanged(nameof(this.year));
                 }
             }
         }
@@ -163,6 +152,18 @@ namespace Data
             }
         }
 
+        public string Lyricist
+        {
+            get => lyricist;
+            set
+            {
+                if (this.lyricist != value)
+                {
+                    this.lyricist = value;
+                    OnPropertyChanged(nameof(this.lyricist));
+                }
+            }
+        }
         #endregion
 
         #region ------------------------- Private helper ------------------------------------------------------------------

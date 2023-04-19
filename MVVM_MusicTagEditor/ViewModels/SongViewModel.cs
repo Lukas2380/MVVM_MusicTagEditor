@@ -15,6 +15,7 @@ using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Media;
 using System.Windows;
+using Id3;
 
 namespace MVVM_MusicTagEditor.ViewModels
 {
@@ -66,29 +67,15 @@ namespace MVVM_MusicTagEditor.ViewModels
             // Init collection
             ObservableCollection<Song> songs = new ObservableCollection<Song>();
 
-            string[] musicFiles = Directory.GetFiles(@"C:\Users\lukas\Music\download", "*.mp3");
+            string[] musicFiles = Directory.GetFiles(@"D:\Music\download", "*.mp3");
             foreach (var musicFile in musicFiles)
             {
-                using (var tfile = TagLib.File.Create(musicFile))
+                // Error if used by another process!!
+                using (var mp3 = new Mp3(musicFile))
                 {
-                    // Load the cover image as BitmapImage
-                    var coverData = tfile.Tag.Pictures.FirstOrDefault();
-                    if (coverData != null)
-                    {
-                        using (var ms = new MemoryStream(coverData.Data.Data))
-                        {
-                            var coverImage = ToBitmapImage(new Bitmap(ms));
-                            songs.Add(new Song(tfile.Tag.Title, tfile.Tag.Artists, tfile.Tag.Album, int.Parse(tfile.Tag.Year.ToString()), coverImage, tfile.Tag.Lyrics));
-                        }
-                    }
-                    else
-                    {
-                        Bitmap bitmap = ConvertToBitmap("..\\..\\..\\img\\mp3.png");
-                        BitmapSource sauce = BitmapToBitmapSource(bitmap);
-                        var coverImage = ToBitmapImage(bitmap);
+                    Id3Tag tag = mp3.GetTag(Id3TagFamily.Version2X);
 
-                        songs.Add(new Song(tfile.Tag.Title, tfile.Tag.Artists, tfile.Tag.Album, int.Parse(tfile.Tag.Year.ToString()), coverImage, tfile.Tag.Lyrics));
-                    }
+                    songs.Add(CreateSong(tag));
                 }
             }
 
@@ -96,19 +83,62 @@ namespace MVVM_MusicTagEditor.ViewModels
             this.Songs = songs;
         }
 
+        private Song CreateSong(Id3Tag tag)
+        {
+            BitmapImage coverImage = GetAlbumCover(tag);
+            string lyrics = GetLyrics(tag);
+
+            return new Song(tag.Title, tag.Artists.Value.ToArray(), tag.Album, tag.Year.Value, coverImage, lyrics, tag.Lyricists);
+        }
+
+        /// <summary>
+        /// Gets the tag for a mp3 file and checks if there is an album cover.
+        /// Returns an empty string if there is no album cover found.
+        /// </summary>
+        /// <param name="tag">Id3Tag from an mp3 file. </param>
+        /// <returns>Returns the album cover as a BitmapImage. </returns>
+        private BitmapImage GetAlbumCover(Id3Tag tag)
+        {
+            var coverData = tag.Pictures.FirstOrDefault();
+            BitmapImage coverImage;
+
+            if (coverData != null)
+            {
+                using (var ms = new MemoryStream(coverData.PictureData))
+                {
+                    coverImage = ToBitmapImage(new Bitmap(ms));
+                }
+            }
+            else
+            {
+                Bitmap bitmap = ConvertToBitmap("..\\..\\..\\img\\mp3.png");
+                coverImage = ToBitmapImage(bitmap);
+            }
+            return coverImage;
+        }
+
+        /// <summary>
+        /// Gets the tag for a mp3 file and checks if there are lyrics.
+        /// Returns an empty string if there are no lyrics found.
+        /// </summary>
+        /// <param name="tag">Id3Tag from an mp3 file. </param>
+        /// <returns>Returns the lyrics as a string. </returns>
+        private string GetLyrics(Id3Tag tag)
+        {
+            var lyricsData = tag.Lyrics.FirstOrDefault();
+            string lyrics = "";
+
+            if (lyricsData != null)
+            {
+                lyrics = lyricsData.Lyrics;
+            }
+            return lyrics;
+        }
+
         private void OnSongDataChanged(Song song)
         {
             //// Save student data
             //this.Songs.Add(song);
-        }
-
-        public static BitmapSource BitmapToBitmapSource(Bitmap source)
-        {
-            return System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
-                          source.GetHbitmap(),
-                          IntPtr.Zero,
-                          Int32Rect.Empty,
-                          BitmapSizeOptions.FromEmptyOptions());
         }
 
         public Bitmap ConvertToBitmap(string fileName)
@@ -142,9 +172,10 @@ namespace MVVM_MusicTagEditor.ViewModels
                 return result;
             }
         }
-        #endregion
 
-        #region ------------------------- Commands ------------------------------------------------------------------------
-        #endregion
-    }
+    #endregion
+
+    #region ------------------------- Commands ------------------------------------------------------------------------
+    #endregion
+}
 }

@@ -1,0 +1,6 @@
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\Services.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\Services.pdb
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\obj\Debug\Services.csproj.AssemblyReference.cache
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\obj\Debug\Services.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\obj\Debug\Services.pdb

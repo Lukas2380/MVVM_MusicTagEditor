@@ -33,8 +33,6 @@ namespace MVVM_MusicTagEditor.ViewModels
         public MainViewModel(IEventAggregator eventAggregator) : base(eventAggregator)
         {
             // Hookup commands to associated methods
-            //this.StudentsViewCommand = new ActionCommand(this.StudentsViewCommandExecute, this.StudentsViewCommandCanExecute);
-            //this.SettingsViewCommand = new ActionCommand(this.SettingsViewCommandExecute, this.SettingsViewCommandCanExecute);
             this.SongViewCommand = new ActionCommand(this.SongViewCommandExecute, this.SongViewCommandCanExecute);
             this.InfoViewCommand = new ActionCommand(this.InfoViewCommandExecute, this.InfoViewCommandCanExecute);
 

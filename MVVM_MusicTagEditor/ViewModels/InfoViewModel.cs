@@ -28,10 +28,11 @@ namespace MVVM_MusicTagEditor.ViewModels
         public string Title { get; set; }
         public string Artists { get; set; }
         public string AlbumName { get; set; }
-        public int Year { get; set; }
+        public int? Year { get; set; }
         public BitmapImage AlbumCover { get; set; }
         public BitmapSource AlbumCoversource { get; set; }
         public string Lyrics { get; set; }
+        public string Lyricist { get; set; }
         public ICommand SendDataCommand { get; set; }
         #endregion
 
@@ -47,7 +48,7 @@ namespace MVVM_MusicTagEditor.ViewModels
         private void SendDataCommandExecute(object parameter)
         {
             // Create new song
-            Song song = new Song(this.Title, this.Artists.Split(','), this.AlbumName, this.Year, this.AlbumCover, this.Lyrics);
+            Song song = new Song(this.Title, this.Artists.Split(','), this.AlbumName, this.Year, this.AlbumCover, this.Lyrics, this.Lyricist);
 
             // Send data to SongViewModel
             this.EventAggregator.GetEvent<SongDataChangedEvent>().Publish(song);
@@ -59,12 +60,13 @@ namespace MVVM_MusicTagEditor.ViewModels
             Title = song.Title;
             Artists = song.Artists.ToString();
             AlbumName = song.AlbumName;
-            Year = int.Parse(song.Year);
+            Year = song.Year;
 
             AlbumCover = song.AlbumCover;
             AlbumCoversource = song.AlbumCoversource;
 
             Lyrics = song.Lyrics;
+            Lyricist = song.Lyricist;
 
             // this shid important
             this.OnPropertyChanged(nameof(Title));
@@ -72,6 +74,7 @@ namespace MVVM_MusicTagEditor.ViewModels
             this.OnPropertyChanged(nameof(AlbumName));
             this.OnPropertyChanged(nameof(AlbumCover));
             this.OnPropertyChanged(nameof(Lyrics));
+            this.OnPropertyChanged(nameof(Lyricist));
             this.OnPropertyChanged(nameof(Year));
         }
         #endregion
