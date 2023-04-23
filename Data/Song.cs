@@ -14,7 +14,7 @@ namespace Data
         private string albumName;
         private int? year;
         private BitmapImage albumCover;
-        private BitmapSource albumCoversource;
+        private string genre;
         private string lyrics;
         private string lyricist;
 
@@ -22,13 +22,14 @@ namespace Data
 
         #region ------------------------- Constructors, Destructors, Dispose, Clone ---------------------------------------
 
-        public Song(string title, string[] artists, string albumName, int? year, BitmapImage albumCover, string lyrics, string lyricist)
+        public Song(string title, string[] artists, string albumName, int? year, BitmapImage albumCover, string genre, string lyrics, string lyricist)
         {
             this.title = title;
             this.artists = artists;
             this.albumName = albumName;
             this.year = year;
             this.albumCover = albumCover;
+            this.genre = genre;
             this.lyrics = lyrics;
             this.lyricist = lyricist;
         }
@@ -123,25 +124,22 @@ namespace Data
             }
         }
 
-        public BitmapSource AlbumCoversource
+        public string Genre
         {
-            get
-            {
-                return this.albumCoversource;
-            }
+            get => this.genre;
             set
             {
-                if (this.albumCoversource != value)
+                if (this.genre != value)
                 {
-                    this.albumCoversource = value;
-                    OnPropertyChanged(nameof(this.albumCoversource));
+                    this.genre = value;
+                    OnPropertyChanged(nameof(this.genre));
                 }
             }
         }
 
         public string Lyrics
         {
-            get => lyrics;
+            get => this.lyrics;
             set
             {
                 if (this.lyrics != value)

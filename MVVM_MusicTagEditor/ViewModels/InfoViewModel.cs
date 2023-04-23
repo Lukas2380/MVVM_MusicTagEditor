@@ -30,7 +30,7 @@ namespace MVVM_MusicTagEditor.ViewModels
         public string AlbumName { get; set; }
         public int? Year { get; set; }
         public BitmapImage AlbumCover { get; set; }
-        public BitmapSource AlbumCoversource { get; set; }
+        public string Genre { get; set; }
         public string Lyrics { get; set; }
         public string Lyricist { get; set; }
         public ICommand SendDataCommand { get; set; }
@@ -45,13 +45,16 @@ namespace MVVM_MusicTagEditor.ViewModels
             return true;
         }
 
+        /// <summary>
+        /// Save button
+        /// </summary>
+        /// <param name="parameter"></param>
         private void SendDataCommandExecute(object parameter)
         {
             // Create new song
-            Song song = new Song(this.Title, this.Artists.Split(','), this.AlbumName, this.Year, this.AlbumCover, this.Lyrics, this.Lyricist);
-
+            //Song song = new Song(this.Title, this.Artists.Split(','), this.AlbumName, this.Year, this.AlbumCover, this.Lyrics, this.Lyricist);
             // Send data to SongViewModel
-            this.EventAggregator.GetEvent<SongDataChangedEvent>().Publish(song);
+            //this.EventAggregator.GetEvent<SongDataChangedEvent>().Publish(song);
         }
 
         private void OnSelectedSongChanged(Song song)
@@ -61,12 +64,10 @@ namespace MVVM_MusicTagEditor.ViewModels
             Artists = song.Artists.ToString();
             AlbumName = song.AlbumName;
             Year = song.Year;
-
             AlbumCover = song.AlbumCover;
-            AlbumCoversource = song.AlbumCoversource;
-
             Lyrics = song.Lyrics;
             Lyricist = song.Lyricist;
+            Genre = song.Genre;
 
             // this shid important
             this.OnPropertyChanged(nameof(Title));
@@ -76,6 +77,7 @@ namespace MVVM_MusicTagEditor.ViewModels
             this.OnPropertyChanged(nameof(Lyrics));
             this.OnPropertyChanged(nameof(Lyricist));
             this.OnPropertyChanged(nameof(Year));
+            this.OnPropertyChanged(nameof(Genre));
         }
         #endregion
     }

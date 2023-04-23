@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MVVM_MusicTagEditor.Views"
              mc:Ignorable="d" 
+             
              d:DesignHeight="450" d:DesignWidth="800" x:Name="window">
     <TabControl>
         <TabItem Header="General">
@@ -22,12 +23,14 @@
                             <Label Content="Album: " HorizontalAlignment="Left" Margin="0 0.2"/>
                             <Label Content="Artist(s): " HorizontalAlignment="Left" Margin="0 0.2"/>
                             <Label Content="Year: " HorizontalAlignment="Left" Margin="0 0.2"/>
+                            <Label Content="Genre: " HorizontalAlignment="Left" Margin="0 0.2"/>
                         </StackPanel>
                         <StackPanel Orientation="Vertical" Grid.Column="1">
                             <TextBox Width="200" HorizontalAlignment="Left" Text="{Binding Path=Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                             <TextBox Width="200" HorizontalAlignment="Left" Text="{Binding Path=AlbumName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                             <TextBox Width="200" HorizontalAlignment="Left" Text="{Binding Path=Artists, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                             <TextBox Width="200" HorizontalAlignment="Left" Text="{Binding Path=Year, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBox Width="200" HorizontalAlignment="Left" Text="{Binding Path=Genre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </StackPanel>
                     </Grid>
 
@@ -45,10 +48,11 @@
                     <TextBox Width="auto" MinWidth="100" HorizontalAlignment="Left" 
                              Text="{Binding Path=Lyricist, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
-                <TextBox ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="20" Background="#444" 
+                <TextBox ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="20" Background="{DynamicResource SecondaryColor}" 
                         Grid.Row="0" DockPanel.Dock="Top" TextAlignment="Center"
                         Text="{Binding Path=Lyrics, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             </DockPanel>
         </TabItem>
     </TabControl>
 </UserControl>
+
