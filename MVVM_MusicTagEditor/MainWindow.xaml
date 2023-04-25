@@ -25,6 +25,11 @@
             <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
                 <Button Content="Song View" Command="{Binding SongViewCommand}"/>
                 <Button Content="Info View" Command="{Binding InfoViewCommand}"/>
+                <ToggleButton Content="Switch Theme"
+                              IsChecked="{Binding IsDarkTheme}"
+                              Command="{Binding ToggleThemeCommand}"
+                              CommandParameter="{Binding IsDarkTheme}"/>
+
             </StackPanel>
             <Grid>
                 <Grid.ColumnDefinitions>

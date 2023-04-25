@@ -4,7 +4,6 @@
              xmlns:local="clr-namespace:MVVM_MusicTagEditor"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
     <Application.Resources>
-        <!--<ResourceDictionary Source="ResourceDictionaries/LightTheme.xaml"/>-->
         <ResourceDictionary Source="ResourceDictionaries/DarkTheme.xaml"/>
     </Application.Resources>
 </Application>

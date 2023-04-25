@@ -68,7 +68,7 @@ namespace MVVM_MusicTagEditor.ViewModels
             // Init collection
             ObservableCollection<Song> songs = new ObservableCollection<Song>();
 
-            string[] musicFiles = Directory.GetFiles(@"D:\Music\download");
+            string[] musicFiles = Directory.GetFiles(@"C:\Users\lukas\Music\download");
             foreach (var musicFile in musicFiles)
             {
                 // Error if used by another process!!

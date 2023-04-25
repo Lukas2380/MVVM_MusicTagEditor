@@ -8,6 +8,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -24,6 +26,8 @@ namespace MVVM_MusicTagEditor.ViewModels
 
         private UserControl songView;
         private UserControl infoView;
+
+        private bool isDarkTheme;
         #endregion
 
         #region ------------------------- Constructors, Destructors, Dispose, Clone -------------------------
@@ -35,6 +39,7 @@ namespace MVVM_MusicTagEditor.ViewModels
             // Hookup commands to associated methods
             this.SongViewCommand = new ActionCommand(this.SongViewCommandExecute, this.SongViewCommandCanExecute);
             this.InfoViewCommand = new ActionCommand(this.InfoViewCommandExecute, this.InfoViewCommandCanExecute);
+            this.ToggleThemeCommand = new ActionCommand(this.ToggleThemeCommandExecute, this.ToggleThemeCommandCanExecute);
 
             // Init songview and songviewmodel
             this.songView = new SongView();
@@ -45,6 +50,9 @@ namespace MVVM_MusicTagEditor.ViewModels
             this.infoView = new InfoView();
             InfoViewModel infoViewModel = new InfoViewModel(this.EventAggregator);
             infoView.DataContext = infoViewModel;
+
+
+            this.isDarkTheme = Application.Current.Resources.Source.ToString().Contains("dark") ? false : true;
         }
         #endregion
 
@@ -57,6 +65,8 @@ namespace MVVM_MusicTagEditor.ViewModels
 
         //public ICommand SettingsViewCommand { get; private set; }
         public ICommand InfoViewCommand { get; private set; }
+
+        public ICommand ToggleThemeCommand { get; private set; }
 
         /// <summary>
         /// Gets and sets the view that is currently bound to the <see cref="ContentControl"/> left.
@@ -92,6 +102,8 @@ namespace MVVM_MusicTagEditor.ViewModels
                 }
             }
         }
+
+        
         #endregion
 
         #region ------------------------- Private helper ----------------------------------------------------
@@ -125,6 +137,27 @@ namespace MVVM_MusicTagEditor.ViewModels
         private void InfoViewCommandExecute(object parameter)
         {
             this.CurrentViewRight = this.CurrentViewRight == null ? this.infoView : null;
+        }
+
+        private bool ToggleThemeCommandCanExecute(object parameter)
+        {
+            return true;
+        }
+
+        private void ToggleThemeCommandExecute(object parameter)
+        {
+            if (isDarkTheme)
+            {
+                Application.Current.Resources.Source = new Uri("ResourceDictionaries/LightTheme.xaml", UriKind.RelativeOrAbsolute);
+                this.OnPropertyChanged(nameof(Application.Current.Resources.Source));
+                isDarkTheme = false;
+            }
+            else
+            {
+                Application.Current.Resources.Source = new Uri("ResourceDictionaries/DarkTheme.xaml", UriKind.RelativeOrAbsolute);
+                this.OnPropertyChanged(nameof(Application.Current.Resources.Source));
+                isDarkTheme = true;
+            }
         }
         #endregion
     }

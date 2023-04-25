@@ -76,6 +76,7 @@ namespace Services.SongData
         private static Bitmap ConvertToBitmap(string fileName)
         {
             Bitmap bitmap;
+            // here some error
             using (Stream bmpStream = System.IO.File.Open(fileName, System.IO.FileMode.Open))
             {
                 System.Drawing.Image image = System.Drawing.Image.FromStream(bmpStream);
