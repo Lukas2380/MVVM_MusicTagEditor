@@ -51,13 +51,20 @@ namespace Services.SongData
         public static BitmapImage GetAlbumCover(Id3Tag tag)
         {
             var coverData = tag.Pictures.FirstOrDefault();
-            BitmapImage coverImage;
+            BitmapImage coverImage = null;
 
             if (coverData != null)
             {
-                using (var ms = new MemoryStream(coverData.PictureData))
+                try
                 {
-                    coverImage = ToBitmapImage(new Bitmap(ms));
+                    using (var ms = new MemoryStream(coverData.PictureData))
+                    {
+                        coverImage = ToBitmapImage(new Bitmap(ms));
+                    }
+                }
+                catch (Exception ex)
+                {
+
                 }
             }
             else

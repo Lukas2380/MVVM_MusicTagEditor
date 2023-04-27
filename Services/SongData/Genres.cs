@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
@@ -219,14 +220,26 @@ namespace Services.SongData
         /// <returns>Returns the string of the genre.</returns>
         public static string ToString(Id3Tag tag)
         {
-            if (tag.Genre.ToString().Contains(",") || tag.Genre.ToString().Contains("-") || tag.Genre.ToString() == "")
-            {
-                return tag.Genre.ToString();
-            }
-            int nr;
-            string s = tag.Genre.ToString();
-            s = s.Replace("(", "").Replace(")","").Replace("\"","");
-            nr = int.Parse(s);
+            string genreName = tag.Genre.ToString();
+            genreName = GetActualString(genreName);
+            return genreName;
+        }
+
+        /// <summary>
+        /// The GetActualString method is for converting the genre from the mp3 file to the coorilating strign for it.
+        /// Some mp3 genres are saved like this: (66).
+        /// It can be converted to the string via getting the value of the genre array on the position of the genre "66".
+        /// </summary>
+        /// <param name="genreName"></param>
+        /// <returns></returns>
+        private static string GetActualString(string genreName)
+        {
+            Regex rx = new Regex(@"[(]-?\d+[)]");
+            if (!rx.IsMatch(genreName))
+                return genreName;
+
+            genreName = genreName.Replace("(", "").Replace(")", "");
+            int nr = int.Parse(genreName);
             return genre[nr];
         }
     }

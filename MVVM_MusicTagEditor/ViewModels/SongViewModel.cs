@@ -17,6 +17,7 @@ using System.Windows.Media;
 using System.Windows;
 using Id3;
 using Services.SongData;
+using System.ComponentModel;
 
 namespace MVVM_MusicTagEditor.ViewModels
 {
@@ -25,17 +26,30 @@ namespace MVVM_MusicTagEditor.ViewModels
         #region ------------------------- Fields, Constants, Delegates, Events --------------------------------------------
         /// <summary> Selected Song from ComboBox. </summary>
         private Song selectedSong;
+        private string songdirectory;
+
+        private BackgroundWorker songDataLoader;
+
         #endregion
 
         #region ------------------------- Constructors, Destructors, Dispose, Clone ---------------------------------------
-        public SongViewModel(IEventAggregator eventAggregator) : base(eventAggregator)
+        public SongViewModel(IEventAggregator eventAggregator, string dir) : base(eventAggregator)
         {
-            // load song data
-            this.LoadSongData();
+            this.songdirectory = dir;
+
+            // Initialize the BackgroundWorker
+            this.songDataLoader = new BackgroundWorker();
+            this.songDataLoader.WorkerReportsProgress = true;
+            this.songDataLoader.DoWork += this.LoadSongData;
+            this.songDataLoader.RunWorkerCompleted += this.OnSongDataLoaded;
+
+            // Start the BackgroundWorker
+            this.songDataLoader.RunWorkerAsync();
 
             // subscribe to event
             this.EventAggregator.GetEvent<SongDataChangedEvent>().Subscribe(this.OnSongDataChanged, ThreadOption.UIThread);
         }
+
         #endregion
 
         #region ------------------------- Properties, Indexers ------------------------------------------------------------
@@ -60,28 +74,60 @@ namespace MVVM_MusicTagEditor.ViewModels
                 }
             }
         }
+
+        public string SongDirectory
+        {
+            get
+            {
+                return this.songdirectory;
+            }
+            set
+            {
+                if (this.songdirectory != value)
+                {
+                    this.songdirectory = value;
+                }
+            }
+        }
         #endregion
 
         #region ------------------------- Private helper ------------------------------------------------------------------
-        private void LoadSongData()
+        private void LoadSongData(object sender, DoWorkEventArgs e)
         {
+            BackgroundWorker worker = sender as BackgroundWorker;
+
             // Init collection
             ObservableCollection<Song> songs = new ObservableCollection<Song>();
 
-            string[] musicFiles = Directory.GetFiles(@"C:\Users\lukas\Music\download");
+            string[] musicFiles = Directory.GetFiles(@songdirectory);
+            int totalFiles = musicFiles.Length;
+            int filesProcessed = 0;
             foreach (var musicFile in musicFiles)
             {
+                if (worker.CancellationPending)
+                {
+                    e.Cancel = true;
+                    break;
+                }
+
                 // Error if used by another process!!
                 using (var mp3 = new Mp3(musicFile))
                 {
                     Id3Tag tag = mp3.GetTag(Id3TagFamily.Version2X);
 
-                    songs.Add(CreateSong(tag));
+                    if (tag != null)
+                    {
+                        songs.Add(CreateSong(tag));
+                    }
                 }
+
+                filesProcessed++;
+                int progressPercentage = (int)((float)filesProcessed / (float)totalFiles * 100);
+                worker.ReportProgress(progressPercentage);
             }
 
             // Set Songs
-            this.Songs = songs;
+            e.Result = songs;
         }
 
         private Song CreateSong(Id3Tag tag)
@@ -98,9 +144,20 @@ namespace MVVM_MusicTagEditor.ViewModels
             //// Save student data
             //this.Songs.Add(song);
         }
+
+
+        private void OnSongDataLoaded(object sender, RunWorkerCompletedEventArgs e)
+        {
+            // Set Songs property to the loaded data
+            this.Songs = (ObservableCollection<Song>)e.Result;
+
+            this.OnPropertyChanged(nameof(Songs));
+            this.songDataLoader.Dispose();
+        }
+
         #endregion
 
         #region ------------------------- Commands ------------------------------------------------------------------------
-    #endregion
+        #endregion
     }
 }

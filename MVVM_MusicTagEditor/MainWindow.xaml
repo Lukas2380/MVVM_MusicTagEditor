@@ -22,13 +22,12 @@
         WindowStyle="None">
     <Grid>
         <DockPanel>
-            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
-                <Button Content="Song View" Command="{Binding SongViewCommand}"/>
-                <Button Content="Info View" Command="{Binding InfoViewCommand}"/>
-                <ToggleButton Content="Switch Theme"
-                              IsChecked="{Binding IsDarkTheme}"
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Height="30">
+                <ToggleButton Content="Switch Theme" Width="50" Height="50"
                               Command="{Binding ToggleThemeCommand}"
                               CommandParameter="{Binding IsDarkTheme}"/>
+
+                <Button Command="{Binding ChooseDirectoryCommand}">Choose dir</Button>
 
             </StackPanel>
             <Grid>

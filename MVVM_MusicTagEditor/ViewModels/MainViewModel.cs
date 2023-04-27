@@ -1,10 +1,15 @@
 ﻿using Common.Command;
 using Common.NotifyPropertyChanged;
 using Microsoft.Practices.Prism.Events;
+using Microsoft.Win32;
+using Microsoft.WindowsAPICodePack.Dialogs;
+using MVVM_MusicTagEditor.Events;
 using MVVM_MusicTagEditor.Views;
+using Services.Dialog;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +17,7 @@ using System.Web.UI.WebControls;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using static Microsoft.WindowsAPICodePack.Shell.PropertySystem.SystemProperties.System;
 
 namespace MVVM_MusicTagEditor.ViewModels
 {
@@ -25,6 +31,7 @@ namespace MVVM_MusicTagEditor.ViewModels
         private UserControl currentViewRight;
 
         private UserControl songView;
+        private UserControl songViewTemplate;
         private UserControl infoView;
 
         private bool isDarkTheme;
@@ -37,22 +44,26 @@ namespace MVVM_MusicTagEditor.ViewModels
         public MainViewModel(IEventAggregator eventAggregator) : base(eventAggregator)
         {
             // Hookup commands to associated methods
-            this.SongViewCommand = new ActionCommand(this.SongViewCommandExecute, this.SongViewCommandCanExecute);
-            this.InfoViewCommand = new ActionCommand(this.InfoViewCommandExecute, this.InfoViewCommandCanExecute);
             this.ToggleThemeCommand = new ActionCommand(this.ToggleThemeCommandExecute, this.ToggleThemeCommandCanExecute);
-
-            // Init songview and songviewmodel
-            this.songView = new SongView();
-            SongViewModel songViewModel = new SongViewModel(this.EventAggregator);
-            songView.DataContext = songViewModel;
+            this.ChooseDirectoryCommand = new ActionCommand(this.ChooseDirectoryCommandExecute, this.ChooseDirectoryCommandCanExecute);
 
             // Init infoview and infoviewmodel
             this.infoView = new InfoView();
             InfoViewModel infoViewModel = new InfoViewModel(this.EventAggregator);
             infoView.DataContext = infoViewModel;
 
-
+            // Init songViewTemplate and model
+            this.songViewTemplate = new SongViewTemplate();
+            
+            // Init theme
             this.isDarkTheme = Application.Current.Resources.Source.ToString().Contains("dark") ? false : true;
+
+            // Set starting views
+            this.CurrentViewLeft = this.songViewTemplate;
+            this.CurrentViewRight = this.infoView;
+
+            // subscribe to event
+            this.EventAggregator.GetEvent<ChangedSongViewDataEvent>().Subscribe(this.CreateNewSongView, ThreadOption.UIThread);
         }
         #endregion
 
@@ -60,13 +71,10 @@ namespace MVVM_MusicTagEditor.ViewModels
         /// <summary>
         /// Gets the students view button command.
         /// </summary>
-        //public ICommand StudentsViewCommand { get; private set; }
         public ICommand SongViewCommand { get; private set; }
-
-        //public ICommand SettingsViewCommand { get; private set; }
         public ICommand InfoViewCommand { get; private set; }
-
         public ICommand ToggleThemeCommand { get; private set; }
+        public ICommand ChooseDirectoryCommand { get; private set; }
 
         /// <summary>
         /// Gets and sets the view that is currently bound to the <see cref="ContentControl"/> left.
@@ -103,10 +111,27 @@ namespace MVVM_MusicTagEditor.ViewModels
             }
         }
 
-        
+        public bool IsDarkTheme
+        {
+            get { return this.isDarkTheme; }
+            set 
+            { 
+                if (this.isDarkTheme != value)
+                { this.isDarkTheme = value;}
+            }
+        }
         #endregion
 
         #region ------------------------- Private helper ----------------------------------------------------
+        private void CreateNewSongView(string dir)
+        {
+            // Init songview and songviewmodel
+            this.songView = new SongView();
+            SongViewModel songViewModel = new SongViewModel(this.EventAggregator, dir);
+            songView.DataContext = songViewModel;
+
+            this.CurrentViewLeft = this.songView;
+        }
         #endregion
 
         #region ------------------------- Commands ----------------------------------------------------------
@@ -148,16 +173,35 @@ namespace MVVM_MusicTagEditor.ViewModels
         {
             if (isDarkTheme)
             {
-                Application.Current.Resources.Source = new Uri("ResourceDictionaries/LightTheme.xaml", UriKind.RelativeOrAbsolute);
-                this.OnPropertyChanged(nameof(Application.Current.Resources.Source));
+                ChangeTheme("LightTheme");
                 isDarkTheme = false;
             }
             else
             {
-                Application.Current.Resources.Source = new Uri("ResourceDictionaries/DarkTheme.xaml", UriKind.RelativeOrAbsolute);
-                this.OnPropertyChanged(nameof(Application.Current.Resources.Source));
+                ChangeTheme("DarkTheme");
                 isDarkTheme = true;
             }
+        }
+
+        private void ChangeTheme(string theme)
+        {
+            theme = "ResourceDictionaries/" + theme + ".xaml";
+            Application.Current.Resources.Source = new Uri(theme, UriKind.RelativeOrAbsolute);
+            this.OnPropertyChanged(nameof(Application.Current.Resources.Source));
+        }
+
+
+
+
+        private bool ChooseDirectoryCommandCanExecute(object parameter)
+        {
+            return true;
+        }
+
+        private void ChooseDirectoryCommandExecute(object parameter)
+        {
+            if (ChangeDirectoryService.ChangeDirectory(out string filename))
+                this.EventAggregator.GetEvent<ChangedSongViewDataEvent>().Publish(filename);
         }
         #endregion
     }
