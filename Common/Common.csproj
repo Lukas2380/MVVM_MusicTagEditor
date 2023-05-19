@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Command\ActionCommand.cs" />
+    <Compile Include="Command\GetSelectedItemsCommand.cs" />
     <Compile Include="NotifyPropertyChanged\NotifyPropertyChanged.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -18,16 +18,19 @@ using System.Windows;
 using Id3;
 using Services.SongData;
 using System.ComponentModel;
+using System.Windows.Input;
+using Common.Command;
+using System.Collections;
 
 namespace MVVM_MusicTagEditor.ViewModels
 {
     public class SongViewModel : ViewModelBase
     {
         #region ------------------------- Fields, Constants, Delegates, Events --------------------------------------------
-        /// <summary> Selected Song from ComboBox. </summary>
+        /// <summary> Selected Song from ListView. </summary>
         private Song selectedSong;
         private string songdirectory;
-
+        private int progressBarValue;
         private BackgroundWorker songDataLoader;
 
         #endregion
@@ -39,7 +42,6 @@ namespace MVVM_MusicTagEditor.ViewModels
 
             // Initialize the BackgroundWorker
             this.songDataLoader = new BackgroundWorker();
-            this.songDataLoader.WorkerReportsProgress = true;
             this.songDataLoader.DoWork += this.LoadSongData;
             this.songDataLoader.RunWorkerCompleted += this.OnSongDataLoaded;
 
@@ -55,6 +57,26 @@ namespace MVVM_MusicTagEditor.ViewModels
         #region ------------------------- Properties, Indexers ------------------------------------------------------------
         /// <summary> Gets or sets the collection of all songs. </summary>
         public ObservableCollection<Song> Songs { get; set; }
+
+        #region SelectedItems
+        // This is from this website: https://stackoverflow.com/questions/9880589/bind-to-selecteditems-from-datagrid-or-listbox-in-mvvm 
+        // (The answer starts with "Binding directly do view model, little tricky version:")
+        public List<Song> SelectedItems { get; set; } = new List<Song>();
+        public ICommand SelectedItemsCommand
+        {
+            get
+            {
+                return new GetSelectedItemsCommand(list =>
+                {
+
+                    SelectedItems.Clear();
+                    IList items = (IList)list;
+                    IEnumerable<Song> collection = items.Cast<Song>();
+                    SelectedItems = collection.ToList();
+                });
+            }
+        }
+        #endregion
 
         /// <summary> Gets or sets the selected song from the ComboBox</summary>
         public Song SelectedSong
@@ -86,6 +108,19 @@ namespace MVVM_MusicTagEditor.ViewModels
                 if (this.songdirectory != value)
                 {
                     this.songdirectory = value;
+                }
+            }
+        }
+
+        public int ProgressBarValue
+        {
+            get { return this.progressBarValue; }
+            set
+            {
+                if (this.progressBarValue != value)
+                {
+                    this.progressBarValue = value;
+                    this.OnPropertyChanged(nameof(this.ProgressBarValue));
                 }
             }
         }
@@ -122,8 +157,7 @@ namespace MVVM_MusicTagEditor.ViewModels
                 }
 
                 filesProcessed++;
-                int progressPercentage = (int)((float)filesProcessed / (float)totalFiles * 100);
-                worker.ReportProgress(progressPercentage);
+                ProgressBarValue = (int)((float)filesProcessed / (float)totalFiles * 100);
             }
 
             // Set Songs
@@ -141,7 +175,7 @@ namespace MVVM_MusicTagEditor.ViewModels
 
         private void OnSongDataChanged(Song song)
         {
-            //// Save student data
+            //// Save song data
             //this.Songs.Add(song);
         }
 
@@ -152,6 +186,7 @@ namespace MVVM_MusicTagEditor.ViewModels
             this.Songs = (ObservableCollection<Song>)e.Result;
 
             this.OnPropertyChanged(nameof(Songs));
+            this.ProgressBarValue = 100;
             this.songDataLoader.Dispose();
         }
 

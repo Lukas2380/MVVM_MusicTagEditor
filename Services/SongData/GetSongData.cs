@@ -58,7 +58,7 @@ namespace Services.SongData
                 try
                 {
                     using (var ms = new MemoryStream(coverData.PictureData))
-                    {
+                    { 
                         coverImage = ToBitmapImage(new Bitmap(ms));
                     }
                 }

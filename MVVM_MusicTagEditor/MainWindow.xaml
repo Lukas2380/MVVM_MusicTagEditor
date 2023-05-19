@@ -10,7 +10,7 @@
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:MD="http://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:MW="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:MW="http://metro.mahapps.com/winfx/xaml/controls" xmlns:local1="clr-namespace:MVVM_MusicTagEditor.Views"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
@@ -22,20 +22,26 @@
         WindowStyle="None">
     <Grid>
         <DockPanel>
-            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Height="30">
-                <ToggleButton Content="Switch Theme" Width="50" Height="50"
-                              Command="{Binding ToggleThemeCommand}"
-                              CommandParameter="{Binding IsDarkTheme}"/>
-
-                <Button Command="{Binding ChooseDirectoryCommand}">Choose dir</Button>
-
-            </StackPanel>
+            
+            <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Left" Width="{Binding ElementName=LeftPanel, Path=ActualWidth}">
+                <Button Content="Menu" Margin="5 5 0 0" Width="50" HorizontalAlignment="Left" 
+                        Style="{DynamicResource MahApps.Styles.Button}" Command="{Binding ToggleMenuCommand}" Background="{DynamicResource MahApps.Brushes.Accent2}"/>
+                <StackPanel Orientation="Horizontal" Visibility="{Binding MenuVisibility}">
+                    <Button Margin="5 5 0 0" Content="Switch Theme" Command="{Binding ToggleThemeCommand}" 
+                            Style="{DynamicResource MahApps.Styles.Button}" Background="{DynamicResource MahApps.Brushes.Accent3}"/>
+                    <Button Margin="5 5 0 0" Content="Choose directory" Command="{Binding ChooseDirectoryCommand}" 
+                            Style="{DynamicResource MahApps.Styles.Button}" Background="{DynamicResource MahApps.Brushes.Accent3}"/>
+                </StackPanel>
+                <Button HorizontalAlignment="Right" Width="100" Content="Edit Selection" Command="{Binding EditSelectionCommand}" 
+                        Margin="5 5 18 0" Style="{DynamicResource MahApps.Styles.Button}" Background="{DynamicResource MahApps.Brushes.Accent3}"></Button>
+            </DockPanel>
+    
             <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition MinWidth="450" Width="*"/>
-                    <ColumnDefinition MaxWidth="600"/>
+                <Grid.ColumnDefinitions>    
+                    <ColumnDefinition MinWidth="300" Width="*"/>
+                    <ColumnDefinition MaxWidth="500"/>
                 </Grid.ColumnDefinitions>
-                <ContentControl Grid.Column="0" Content="{Binding Path=CurrentViewLeft}"/>
+                <ContentControl x:Name="LeftPanel" Grid.Column="0" Content="{Binding Path=CurrentViewLeft}"/>
                 <ContentControl Grid.Column="1" Content="{Binding Path=CurrentViewRight}"/>
             </Grid>
         </DockPanel>

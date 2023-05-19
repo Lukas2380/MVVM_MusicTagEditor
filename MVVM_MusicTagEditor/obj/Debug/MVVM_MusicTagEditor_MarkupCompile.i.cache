@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\App.xaml
-71891707291
+7-910426377
 1-1600025693
-16-1077187815
-33-1813177665
-MainWindow.xaml;ResourceDictionaries\DarkTheme.xaml;ResourceDictionaries\LightTheme.xaml;ResourceDictionaries\SecondaryColor.xaml;Views\InfoView.xaml;Views\SongView.xaml;Views\SongViewTemplate.xaml;
+191612863679
+331847690622
+MainWindow.xaml;ResourceDictionaries\DarkTheme.xaml;ResourceDictionaries\LightTheme.xaml;Views\EditWindowView.xaml;Views\InfoView.xaml;Views\SongView.xaml;Views\SongViewTemplate.xaml;
 
 True
 

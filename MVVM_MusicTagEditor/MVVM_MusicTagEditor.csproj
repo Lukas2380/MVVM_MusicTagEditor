@@ -67,8 +67,8 @@
     <Reference Include="Microsoft.Practices.Prism">
       <HintPath>..\libs\libs\Microsoft\prism4.0.0\Microsoft.Practices.Prism.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\WindowsAPICodePack-Core.1.1.1\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack-Core.1.1.2\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\WindowsAPICodePack-Shell.1.1.1\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
@@ -105,12 +105,17 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Events\ChangedSongViewDataEvent.cs" />
+    <Compile Include="Events\ProgramClosingEvent.cs" />
     <Compile Include="Events\SelectedSongChangedEvent.cs" />
     <Compile Include="Events\SongDataChangedEvent.cs" />
+    <Compile Include="ViewModels\EditWindowViewModel.cs" />
     <Compile Include="ViewModels\InfoViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\SongViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Views\EditWindowView.xaml.cs">
+      <DependentUpon>EditWindowView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\InfoView.xaml.cs">
       <DependentUpon>InfoView.xaml</DependentUpon>
     </Compile>
@@ -140,7 +145,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ResourceDictionaries\SecondaryColor.xaml">
+    <Page Include="Views\EditWindowView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

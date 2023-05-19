@@ -1,4 +1,5 @@
-﻿using Microsoft.Practices.Prism.Events;
+﻿using ControlzEx.Theming;
+using Microsoft.Practices.Prism.Events;
 using MVVM_MusicTagEditor.ViewModels;
 using System;
 using System.Collections.Generic;
