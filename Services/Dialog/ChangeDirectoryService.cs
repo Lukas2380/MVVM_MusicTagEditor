@@ -9,23 +9,28 @@ namespace Services.Dialog
 {
     public class ChangeDirectoryService
     {
-        public static bool ChangeDirectory(out string filename)
+        /// <summary>
+        /// The ChangeDirectory method creates a dialog for the user to choose a directory.
+        /// </summary>
+        /// <param name="directory">The correct directory.</param>
+        /// <returns>True, if the user chose a correct directory, False if not.</returns>
+        public static bool ChangeDirectory(out string directory)
         {
-            // Code for me cuz faster make sure to remove in end project
+            // Code for me cuz faster, make sure to remove in final project
             string dir = "C:\\Users\\lukas\\Music\\";
             if (System.Environment.MachineName == "LUKAS-DESKTOP")
             {
                 dir = "D:\\Music\\";
             }
 
-            filename = null;
+            directory = null;
             // Let user pick folder 
             CommonOpenFileDialog dialog = new CommonOpenFileDialog();
             dialog.IsFolderPicker = true;
             dialog.InitialDirectory = dir;
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
-                filename = dialog.FileName;
+                directory = dialog.FileName;
                 return true;
             }
             return false;

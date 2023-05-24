@@ -14,6 +14,10 @@ namespace MVVM_MusicTagEditor.ViewModels
     public class InfoViewModel : ViewModelBase
     {
         #region ------------------------- Constructors, Destructors, Dispose, Clone ---------------------------------------
+        /// <summary>
+        /// Initializes a new instance of the InfoViewModel class.
+        /// </summary>
+        /// <param name="eventAggregator">The event aggregator used for communication between view models.</param>
         public InfoViewModel(IEventAggregator eventAggregator) : base(eventAggregator)
         {
             // Hookup commands
@@ -25,18 +29,52 @@ namespace MVVM_MusicTagEditor.ViewModels
         #endregion
 
         #region ------------------------- Properties, Indexers ------------------------------------------------------------
+        
+        /// <summary>
+        /// Gets or sets the title of the song.
+        /// </summary>
         public string Title { get; set; }
-        public string Artists { get; set; }
-        public string AlbumName { get; set; }
-        public int? Year { get; set; }
-        public BitmapImage AlbumCover { get; set; }
-        public string Genre { get; set; }
-        public string Lyrics { get; set; }
-        public string Lyricist { get; set; }
-        public ICommand SendDataCommand { get; set; }
-        #endregion
 
-        #region ------------------------- Private helper ------------------------------------------------------------------
+        /// <summary>
+        /// Gets or sets the artists of the song.
+        /// </summary>
+        public string Artists { get; set; }
+
+        /// <summary>
+        /// Gets or sets the album name of the song.
+        /// </summary>
+        public string AlbumName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the release year of the song.
+        /// </summary>
+        public int? Year { get; set; }
+
+        /// <summary>
+        /// Gets or sets the album cover image of the song.
+        /// </summary>
+        public BitmapImage AlbumCover { get; set; }
+
+        /// <summary>
+        /// Gets or sets the genre of the song.
+        /// </summary>
+        public string Genre { get; set; }
+
+        /// <summary>
+        /// Gets or sets the lyrics of the song.
+        /// </summary>
+        public string Lyrics { get; set; }
+
+        /// <summary>
+        /// Gets or sets the lyricist of the song.
+        /// </summary>
+        public string Lyricist { get; set; }
+
+        /// <summary>
+        /// Gets or sets the command to send data.
+        /// </summary>
+        public ICommand SendDataCommand { get; set; }
+
         #endregion
 
         #region ------------------------- Commands ------------------------------------------------------------------------
@@ -57,9 +95,13 @@ namespace MVVM_MusicTagEditor.ViewModels
             //this.EventAggregator.GetEvent<SongDataChangedEvent>().Publish(song);
         }
 
+        /// <summary>
+        /// Handles the event when the selected song changes.
+        /// </summary>
+        /// <param name="song">The selected song.</param>
         private void OnSelectedSongChanged(Song song)
         {
-            // Write to UI
+            // Update the UI
             Title = song.Title;
             Artists = song.Artists.ToString();
             AlbumName = song.AlbumName;
@@ -69,6 +111,7 @@ namespace MVVM_MusicTagEditor.ViewModels
             Lyricist = song.Lyricist;
             Genre = song.Genre;
 
+            // Notify the UI
             this.OnPropertyChanged(nameof(Title));
             this.OnPropertyChanged(nameof(Artists));
             this.OnPropertyChanged(nameof(AlbumName));
@@ -78,6 +121,7 @@ namespace MVVM_MusicTagEditor.ViewModels
             this.OnPropertyChanged(nameof(Year));
             this.OnPropertyChanged(nameof(Genre));
         }
+
         #endregion
     }
 }

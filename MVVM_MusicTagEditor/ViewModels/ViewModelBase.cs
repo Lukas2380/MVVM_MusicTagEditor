@@ -15,6 +15,10 @@ namespace MVVM_MusicTagEditor.ViewModels
     public class ViewModelBase : NotifyPropertyChanged
     {
         #region ------------------------- Constructors, Destructors, Dispose, Clone ---------------------------------------
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ViewModelBase"/> class.
+        /// </summary>
+        /// <param name="eventAggregator"></param>
         public ViewModelBase(IEventAggregator eventAggregator)
         {
             EventAggregator = eventAggregator;

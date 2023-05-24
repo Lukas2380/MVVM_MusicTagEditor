@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MVVM_MusicTagEditor.Views"
              mc:Ignorable="d" 
-             
              d:DesignHeight="450" d:DesignWidth="800" x:Name="window">
+    
     <TabControl>
         <TabItem Header="General" FontSize="14">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
@@ -38,10 +38,10 @@
             <DockPanel x:Name="dpanel">
                 <StackPanel Orientation="Horizontal" Margin="0 50 0 0" DockPanel.Dock="Top">
                     <Label Content="Lyricist: "/>
-                    <TextBox Width="auto" MinWidth="100"  
+                    <TextBlock Width="auto" MinWidth="100" Margin="10 4 0 0"
                              Text="{Binding Path=Lyricist, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
-                <TextBox ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="0 20 0 0" Background="{DynamicResource SecondaryColor}" 
+                <TextBlock ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="0 20 0 0" Background="{DynamicResource SecondaryColor}" 
                         Grid.Row="0" DockPanel.Dock="Top" TextAlignment="Center" 
                         Text="{Binding Path=Lyrics, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             </DockPanel>

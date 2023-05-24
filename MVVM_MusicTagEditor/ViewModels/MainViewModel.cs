@@ -25,9 +25,6 @@ namespace MVVM_MusicTagEditor.ViewModels
     public class MainViewModel : ViewModelBase
     {
         #region ------------------------- Fields, Constants, Delegates, Events ------------------------------
-        /// <summary>
-        /// View that is currently bound to the <see cref="ContentControl"/> left.
-        /// </summary>
         private UserControl currentViewLeft;
         private UserControl currentViewRight;
 
@@ -81,9 +78,7 @@ namespace MVVM_MusicTagEditor.ViewModels
         #endregion
 
         #region ------------------------- Properties, Indexers ----------------------------------------------
-        /// <summary>
-        /// Gets the students view button command.
-        /// </summary>
+        
         public ICommand SongViewCommand { get; private set; }
         public ICommand InfoViewCommand { get; private set; }
         public ICommand ToggleThemeCommand { get; private set; }
@@ -92,7 +87,7 @@ namespace MVVM_MusicTagEditor.ViewModels
         public ICommand EditSelectionCommand { get; private set; }
 
         /// <summary>
-        /// Gets and sets the view that is currently bound to the <see cref="ContentControl"/> left.
+        /// Gets or sets the view that is currently bound to the <see cref="ContentControl"/> left.
         /// </summary>
         public UserControl CurrentViewLeft
         {
@@ -110,6 +105,9 @@ namespace MVVM_MusicTagEditor.ViewModels
             }
         }
 
+        /// <summary>
+        /// Gets or sets the view that is currently bound to the <see cref="ContentControl"/> right.
+        /// </summary>
         public UserControl CurrentViewRight
         {
             get
@@ -126,6 +124,9 @@ namespace MVVM_MusicTagEditor.ViewModels
             }
         }
 
+        /// <summary>
+        /// Gets or sets the boolean value for the darktheme.
+        /// </summary>
         public bool IsDarkTheme
         {
             get { return this.isDarkTheme; }
@@ -136,6 +137,9 @@ namespace MVVM_MusicTagEditor.ViewModels
             }
         }
 
+        /// <summary>
+        /// Gets or sets the MenuVisibility.
+        /// </summary>
         public string MenuVisibility
         {
             get { return this.menuVisibility; }
@@ -149,6 +153,9 @@ namespace MVVM_MusicTagEditor.ViewModels
             }
         }
 
+        /// <summary>
+        /// Gets or sets the boolean for if the editselection button can be executed.
+        /// </summary>
         public bool EditSelectionCanExecute
         {
             get
@@ -168,9 +175,13 @@ namespace MVVM_MusicTagEditor.ViewModels
         #endregion
 
         #region ------------------------- Private helper ----------------------------------------------------
+        /// <summary>
+        /// Creates a new instance of the song view and sets up the associated view model.
+        /// </summary>
+        /// <param name="dir">The directory for the songs.</param>
         private void CreateNewSongView(string dir)
         {
-            // Init songview and songviewmodel
+            // Initialize the song view and song view model
             this.songView = new SongView();
             this.songViewModel = new SongViewModel(this.EventAggregator, dir);
             songView.DataContext = songViewModel;
@@ -179,6 +190,10 @@ namespace MVVM_MusicTagEditor.ViewModels
             this.editSelectionCanExecute = true;
         }
 
+        /// <summary>
+        /// Changes the application theme.
+        /// </summary>
+        /// <param name="theme">The theme to apply. Can be "light" or "dark".</param>
         private void ChangeTheme(string theme)
         {
             theme = "ResourceDictionaries/" + theme + ".xaml";
@@ -235,11 +250,20 @@ namespace MVVM_MusicTagEditor.ViewModels
         #endregion
 
         #region InfoViewCommand
+        /// <summary>
+        /// Determines whether the InfoViewCommand can be executed.
+        /// </summary>
+        /// <param name="parameter">The command parameter.</param>
+        /// <returns>True if the command can be executed, false otherwise.</returns>
         private bool InfoViewCommandCanExecute(object parameter)
         {
             return true;
         }
 
+        /// <summary>
+        /// Executes the InfoViewCommand.
+        /// </summary>
+        /// <param name="parameter">The command parameter.</param>
         private void InfoViewCommandExecute(object parameter)
         {
             this.CurrentViewRight = this.CurrentViewRight == null ? this.infoView : null;
@@ -247,11 +271,20 @@ namespace MVVM_MusicTagEditor.ViewModels
         #endregion
 
         #region ToggleThemeCommand
+        /// <summary>
+        /// Determines whether the ToggleThemeCommand can be executed.
+        /// </summary>
+        /// <param name="parameter">The command parameter.</param>
+        /// <returns>True if the command can be executed, false otherwise.</returns>
         private bool ToggleThemeCommandCanExecute(object parameter)
         {
             return true;
         }
 
+        /// <summary>
+        /// Executes the ToggleThemeCommand.
+        /// </summary>
+        /// <param name="parameter">The command parameter.</param>
         private void ToggleThemeCommandExecute(object parameter)
         {
             if (isDarkTheme)
@@ -268,24 +301,42 @@ namespace MVVM_MusicTagEditor.ViewModels
         #endregion
 
         #region ChooseDirectoryCommand
+        /// <summary>
+        /// Determines whether the ChooseDirectoryCommand can be executed.
+        /// </summary>
+        /// <param name="parameter">The command parameter.</param>
+        /// <returns>True if the command can be executed, false otherwise.</returns>
         private bool ChooseDirectoryCommandCanExecute(object parameter)
         {
             return true;
         }
 
+        /// <summary>
+        /// Executes the ChooseDirectoryCommand.
+        /// </summary>
+        /// <param name="parameter">The command parameter.</param>
         private void ChooseDirectoryCommandExecute(object parameter)
         {
-            if (ChangeDirectoryService.ChangeDirectory(out string filename))
-                this.EventAggregator.GetEvent<ChangedSongViewDataEvent>().Publish(filename);
+            if (ChangeDirectoryService.ChangeDirectory(out string directory))
+                this.EventAggregator.GetEvent<ChangedSongViewDataEvent>().Publish(directory);
         }
         #endregion
 
         #region ToggleMenuCommand
+        /// <summary>
+        /// Determines whether the ToggleMenuCommand can be executed.
+        /// </summary>
+        /// <param name="arg">The command parameter.</param>
+        /// <returns>True if the command can be executed, false otherwise.</returns>
         private bool ToggleMenuCommandCanExecute(object arg)
         {
             return true;
         }
 
+        /// <summary>
+        /// Executes the ToggleMenuCommand.
+        /// </summary>
+        /// <param name="obj">The command parameter.</param>
         private void ToggleMenuCommandExecute(object obj)
         {
             this.MenuVisibility = this.MenuVisibility == "Visible" ? "Collapsed" : "Visible";
@@ -293,6 +344,11 @@ namespace MVVM_MusicTagEditor.ViewModels
         #endregion
 
         #region EditSelectionCommand
+        /// <summary>
+        /// Determines whether the EditSelectionCommand can be executed.
+        /// </summary>
+        /// <param name="arg">The command parameter.</param>
+        /// <returns>True if the command can be executed, false otherwise.</returns>
         private bool EditSelectionCommandCanExecute(object arg)
         {
             if (this.editSelectionCanExecute)
@@ -301,6 +357,10 @@ namespace MVVM_MusicTagEditor.ViewModels
             return false;
         }
 
+        /// <summary>
+        /// Executes the EditSelectionCommand.
+        /// </summary>
+        /// <param name="obj">The command parameter.</param>
         private void EditSelectionCommandExecute(object obj)
         {
             if (this.songViewModel.SelectedItems.Count == 0)
@@ -316,7 +376,7 @@ namespace MVVM_MusicTagEditor.ViewModels
 
                 this.editSelectionCanExecute = false;
 
-                // subscribe to other window closing event
+                // Subscribe to the other window closing event
                 var editWindow = Application.Current.Windows.OfType<EditWindowView>().FirstOrDefault();
 
                 if (editWindow != null)

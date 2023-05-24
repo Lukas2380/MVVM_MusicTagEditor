@@ -27,7 +27,6 @@ namespace MVVM_MusicTagEditor.ViewModels
     public class SongViewModel : ViewModelBase
     {
         #region ------------------------- Fields, Constants, Delegates, Events --------------------------------------------
-        /// <summary> Selected Song from ListView. </summary>
         private Song selectedSong;
         private string songdirectory;
         private int progressBarValue;
@@ -36,9 +35,15 @@ namespace MVVM_MusicTagEditor.ViewModels
         #endregion
 
         #region ------------------------- Constructors, Destructors, Dispose, Clone ---------------------------------------
+        
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SongViewModel"/> class.
+        /// </summary>
+        /// <param name="eventAggregator">The event aggregator used for communication between view models.</param>
+        /// <param name="dir">The directory of the songs.</param>
         public SongViewModel(IEventAggregator eventAggregator, string dir) : base(eventAggregator)
         {
-            this.songdirectory = dir;
+            this.SongDirectory = dir;
 
             // Initialize the BackgroundWorker
             this.songDataLoader = new BackgroundWorker();
@@ -55,7 +60,10 @@ namespace MVVM_MusicTagEditor.ViewModels
         #endregion
 
         #region ------------------------- Properties, Indexers ------------------------------------------------------------
-        /// <summary> Gets or sets the collection of all songs. </summary>
+
+        /// <summary> 
+        /// Gets or sets the collection of all songs. 
+        /// </summary>
         public ObservableCollection<Song> Songs { get; set; }
 
         #region SelectedItems
@@ -68,7 +76,6 @@ namespace MVVM_MusicTagEditor.ViewModels
             {
                 return new GetSelectedItemsCommand(list =>
                 {
-
                     SelectedItems.Clear();
                     IList items = (IList)list;
                     IEnumerable<Song> collection = items.Cast<Song>();
@@ -78,7 +85,9 @@ namespace MVVM_MusicTagEditor.ViewModels
         }
         #endregion
 
-        /// <summary> Gets or sets the selected song from the ComboBox</summary>
+        /// <summary> 
+        /// Gets or sets the selected song for the UI.
+        /// </summary>
         public Song SelectedSong
         {
             get
@@ -97,6 +106,9 @@ namespace MVVM_MusicTagEditor.ViewModels
             }
         }
 
+        /// <summary>
+        /// Gets or sets the directory of the songs.
+        /// </summary>
         public string SongDirectory
         {
             get
@@ -112,6 +124,9 @@ namespace MVVM_MusicTagEditor.ViewModels
             }
         }
 
+        /// <summary>
+        /// Gets or sets the value for the progress bar.
+        /// </summary>
         public int ProgressBarValue
         {
             get { return this.progressBarValue; }
@@ -127,6 +142,10 @@ namespace MVVM_MusicTagEditor.ViewModels
         #endregion
 
         #region ------------------------- Private helper ------------------------------------------------------------------
+
+        /// <summary>
+        /// The LoadSongData method uses a backgroundworker and loads the data for every song in the <see cref="songdirectory"/>
+        /// </summary>
         private void LoadSongData(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = sender as BackgroundWorker;
@@ -146,6 +165,8 @@ namespace MVVM_MusicTagEditor.ViewModels
                 }
 
                 // Error if used by another process!!
+                Exception ex;
+
                 using (var mp3 = new Mp3(musicFile))
                 {
                     Id3Tag tag = mp3.GetTag(Id3TagFamily.Version2X);
@@ -164,6 +185,11 @@ namespace MVVM_MusicTagEditor.ViewModels
             e.Result = songs;
         }
 
+        /// <summary>
+        /// The create song method creates a new song based on the <see cref="Id3Tag"/>.
+        /// </summary>
+        /// <param name="tag"></param>
+        /// <returns></returns>
         private Song CreateSong(Id3Tag tag)
         {
             BitmapImage coverImage = GetSongData.GetAlbumCover(tag);
@@ -179,7 +205,9 @@ namespace MVVM_MusicTagEditor.ViewModels
             //this.Songs.Add(song);
         }
 
-
+        /// <summary>
+        /// The OnSongDataLoaded method handels what happens when loading the song data is finished.
+        /// </summary>
         private void OnSongDataLoaded(object sender, RunWorkerCompletedEventArgs e)
         {
             // Set Songs property to the loaded data
@@ -190,9 +218,6 @@ namespace MVVM_MusicTagEditor.ViewModels
             this.songDataLoader.Dispose();
         }
 
-        #endregion
-
-        #region ------------------------- Commands ------------------------------------------------------------------------
         #endregion
     }
 }
