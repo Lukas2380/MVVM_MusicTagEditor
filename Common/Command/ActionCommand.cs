@@ -49,7 +49,7 @@ namespace Common.Command
         /// this object can be set to null.</param>
         public void Execute(object parameter)
         {
-            this.handlerExecute(parameter);
+           this.handlerExecute(parameter);
         }
 
         /// <summary>

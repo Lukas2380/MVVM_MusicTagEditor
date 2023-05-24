@@ -69,7 +69,6 @@ namespace MVVM_MusicTagEditor.ViewModels
             Lyricist = song.Lyricist;
             Genre = song.Genre;
 
-            // this shid important
             this.OnPropertyChanged(nameof(Title));
             this.OnPropertyChanged(nameof(Artists));
             this.OnPropertyChanged(nameof(AlbumName));

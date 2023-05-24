@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace MVVM_MusicTagEditor.Events
 {
     /// <summary>
-    /// Event signalizes to add new Song data
+    /// Event signalizes that the selection of songs changed.
     /// </summary>
     public class SelectedSongChangedEvent : CompositePresentationEvent<Song>
     {

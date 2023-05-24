@@ -60,3 +60,8 @@ C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEdito
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\Views\EditWindowView.baml
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\Views\EditWindowView.g.cs
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Newtonsoft.Json.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\HtmlAgilityPack.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Newtonsoft.Json.xml
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\HtmlAgilityPack.xml

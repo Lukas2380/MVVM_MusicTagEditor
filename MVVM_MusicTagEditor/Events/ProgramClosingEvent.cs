@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace MVVM_MusicTagEditor.Events
 {
+    /// <summary>
+    /// Event signalizes that the the program is closing.
+    /// </summary>
     public class ProgramClosingEvent : CompositePresentationEvent<string>
     {
 

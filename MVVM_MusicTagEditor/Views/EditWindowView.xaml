@@ -9,6 +9,7 @@
                 xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
                 xmlns:MD="http://materialdesigninxaml.net/winfx/xaml/themes"
                 xmlns:MW="http://metro.mahapps.com/winfx/xaml/controls" xmlns:local1="clr-namespace:MVVM_MusicTagEditor.Views"
+                 xmlns:sys="clr-namespace:System;assembly=mscorlib"
                 TextElement.Foreground="{DynamicResource MaterialDesignBody}"
                 TextElement.FontWeight="Regular"
                 TextElement.FontSize="13"
@@ -18,94 +19,280 @@
                 Title="MainWindow" Height="450" Width="800"
                 ShowTitleBar="False"
                 WindowStyle="None" 
-                 MinWidth="800">
+                MinWidth="800">
+    <mah:MetroWindow.Resources>
+        <Style x:Key="CustomButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Gray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
+        <Style TargetType="ToolTip" BasedOn="{StaticResource MahApps.Styles.ToolTip}">
+            <Style.Triggers>
+                <Trigger Property="Content" Value="{x:Static sys:String.Empty}">
+                    <Setter Property="Visibility" Value="Collapsed" />
+                </Trigger>
+                <Trigger Property="Content" Value="{x:Null}">
+                    <Setter Property="Visibility" Value="Collapsed" />
+                </Trigger>
+            </Style.Triggers>
+            <Setter Property="ToolTipService.InitialShowDelay" Value="50"/>
+        </Style>
+
+    </mah:MetroWindow.Resources>
     <DockPanel>
-        <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Left" Width="{Binding ElementName=LeftPanel, Path=ActualWidth}">
-            <Button Content="Menu" Margin="5 5 0 0" Width="50" HorizontalAlignment="Left" 
-                        Style="{DynamicResource MahApps.Styles.Button}" Command="{Binding ToggleMenuCommand}" Background="{DynamicResource MahApps.Brushes.Accent2}"/>
-            <StackPanel Orientation="Horizontal" Visibility="{Binding MenuVisibility}">
-                <Button Margin="5 5 0 0" Content="Switch Theme" Command="{Binding ToggleThemeCommand}" 
+        <DockPanel DockPanel.Dock="Top" Width="{Binding ElementName=LeftPanel, Path=ActualWidth}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="Menu" Margin="5 5 0 0" Width="50" HorizontalAlignment="Left"
+                   Style="{DynamicResource MahApps.Styles.Button}" Command="{Binding ToggleMenuCommand}" Background="{DynamicResource MahApps.Brushes.Accent2}"/>
+
+                    <StackPanel Orientation="Horizontal" Visibility="{Binding MenuVisibility}" Grid.Column="0">
+                        <Button Margin="5 5 0 0" Content="Open Websites" Command="{Binding OpenWebsitesCommand}" 
                             Style="{DynamicResource MahApps.Styles.Button}" Background="{DynamicResource MahApps.Brushes.Accent3}"/>
-                <Button Margin="5 5 0 0" Content="Choose directory" Command="{Binding ChooseDirectoryCommand}" 
+                        <Button Margin="5 5 0 0" Content="Fetch Metadata" Command="{Binding FetchMetadataCommand}" 
                             Style="{DynamicResource MahApps.Styles.Button}" Background="{DynamicResource MahApps.Brushes.Accent3}"/>
-            </StackPanel>
-            <Button HorizontalAlignment="Right" Width="100" Content="Edit Selection" Command="{Binding EditSelectionCommand}" 
-                        Margin="5 5 18 0" Style="{DynamicResource MahApps.Styles.Button}" Background="{DynamicResource MahApps.Brushes.Accent3}"></Button>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Orientation="Horizontal">
+                    <Button Command="{Binding PreviousSongCommand}"  Background="{DynamicResource MahApps.Brushes.Accent2}" Margin="5 5 0 0" Style="{DynamicResource MahApps.Styles.Button}" Width="50" Content="&lt;"/>
+                    <Button Command="{Binding NextSongCommand}" Background="{DynamicResource MahApps.Brushes.Accent2}" Margin="5 5 0 0" Style="{DynamicResource MahApps.Styles.Button}" Width="50" Content="&gt;"/>
+                </StackPanel>
+            </Grid>
         </DockPanel>
 
         <ScrollViewer Margin="0 20 0 0">
-            <Grid DataContext="{Binding CurrentSong}" Margin="10">
+            <Grid>  
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="5"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <DockPanel>
-                    <StackPanel DockPanel.Dock="Top">
-                        <Image Source="{Binding AlbumCover}" Width="150" Height="150" />
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 20 0 0">
-                            <StackPanel Orientation="Vertical">
-                                <Label Content="Title:" HorizontalAlignment="Left" Margin="0 0.2"/>
-                                <Label Content="Album: " HorizontalAlignment="Left" Margin="0 0.2"/>
-                                <Label Content="Artist(s): " HorizontalAlignment="Left" Margin="0 0.2"/>
-                                <Label Content="Year: " HorizontalAlignment="Left" Margin="0 0.2"/>
-                                <Label Content="Genre: " HorizontalAlignment="Left" Margin="0 0.2"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Vertical">
-                                <TextBox Width="200" HorizontalAlignment="Left" Text="{Binding Path=Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                                <TextBox Width="200" HorizontalAlignment="Left" Text="{Binding Path=AlbumName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                                <TextBox Width="200" HorizontalAlignment="Left" Text="{Binding Path=Artists, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                                <TextBox Width="200" HorizontalAlignment="Left" Text="{Binding Path=Year, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                                <TextBox Width="200" HorizontalAlignment="Left" Text="{Binding Path=Genre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                            </StackPanel>
-                        </StackPanel>
+                <DockPanel Grid.Column="0" DataContext="{Binding CurrentSong}">
+                    <StackPanel DockPanel.Dock="Top" Margin="20 0 0 0">
+                        <Label Content="Current Metadata: " FontWeight="Bold" Margin="0 0 10 5" />
+                        <Image Source="{Binding AlbumCover}" Width="150" Height="150" Margin="0 0 10 5" />
+                        <Grid Margin="0 30 0 0">
 
-                        <StackPanel Orientation="Horizontal" Margin="0 20 0 0" HorizontalAlignment="Center">
-                            <Label Content="Lyricist: " Height="auto"/>
-                            <TextBox Width="300" MinWidth="80" HorizontalAlignment="Left" 
-                                 Text="{Binding Path=Lyricist, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition MinWidth="10" Width="0.5*"/>
+                                <ColumnDefinition MinWidth="300" Width="*"/>
+                                <ColumnDefinition MinWidth="10" Width="0.5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="1">
+                                <DockPanel>
+                                    <Label Content="Title:" VerticalAlignment="Center" Width="100"/>
+                                    <TextBox DockPanel.Dock="Right" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Path=Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                </DockPanel>
+
+                                <DockPanel>
+                                    <Label Grid.Row="1" Content="Album:" VerticalAlignment="Center" Width="100"/>
+                                    <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Path=AlbumName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                </DockPanel>
+
+                                <DockPanel>
+                                    <Label Grid.Row="2"  Content="Artist(s):" VerticalAlignment="Center" Width="100"/>
+                                    <TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Path=Artists, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                </DockPanel>
+
+                                <DockPanel>
+                                    <Label Grid.Row="3" Content="Year:" VerticalAlignment="Center" Width="100"/>
+                                    <TextBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Path=Year, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                </DockPanel>
+
+                                <DockPanel>
+                                    <Label Grid.Row="4" Content="Genre:" VerticalAlignment="Center" Width="100"/>
+                                    <TextBox Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Path=Genre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                </DockPanel>
+                            </StackPanel>
+                        </Grid>
+
+                        <StackPanel Orientation="Horizontal" Margin="0 35 0 0" HorizontalAlignment="Center">
+                            <Label Content="Lyricist: "/>
+                            <TextBox Width="250" MinWidth="80" Text="{Binding Path=Lyricist, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </StackPanel>
                     </StackPanel>
-                    <TextBox DockPanel.Dock="Bottom" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="0 20 0 0" Background="{DynamicResource SecondaryColor}" 
-                            Grid.Row="1" TextAlignment="Center" Height="auto"
-                            Text="{Binding Path=Lyrics, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <TextBox DockPanel.Dock="Bottom" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="0 20 0 0" Background="{DynamicResource SecondaryColor}" AcceptsReturn="True"
+         Grid.Row="1" TextAlignment="Center"
+         Text="{Binding Path=Lyrics, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Stretch"/>
+
                 </DockPanel>
-                
 
                 <Canvas Background="Black" Grid.Column="1"></Canvas>
-                <DockPanel Grid.Column="2">
-                    <StackPanel DockPanel.Dock="Top">
-                        <Image Source="{Binding AlbumCover}" Width="150" Height="150" />
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 20 0 0">
-                            <StackPanel Orientation="Vertical">
-                                <Label Content="Title:" HorizontalAlignment="Left" Margin="0 0.2"/>
-                                <Label Content="Album: " HorizontalAlignment="Left" Margin="0 0.2"/>
-                                <Label Content="Artist(s): " HorizontalAlignment="Left" Margin="0 0.2"/>
-                                <Label Content="Year: " HorizontalAlignment="Left" Margin="0 0.2"/>
-                                <Label Content="Genre: " HorizontalAlignment="Left" Margin="0 0.2"/>
-                            </StackPanel>
-                            <StackPanel Orientation="Vertical">
-                                <TextBox Width="200" HorizontalAlignment="Left" Text="{Binding Path=Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                                <TextBox Width="200" HorizontalAlignment="Left" Text="{Binding Path=AlbumName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                                <TextBox Width="200" HorizontalAlignment="Left" Text="{Binding Path=Artists, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                                <TextBox Width="200" HorizontalAlignment="Left" Text="{Binding Path=Year, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                                <TextBox Width="200" HorizontalAlignment="Left" Text="{Binding Path=Genre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                            </StackPanel>
-                        </StackPanel>
 
-                        <StackPanel Orientation="Horizontal" Margin="0 20 0 0" HorizontalAlignment="Center">
-                            <Label Content="Lyricist: " Height="auto"/>
-                            <TextBox Width="300" MinWidth="80" HorizontalAlignment="Left" 
-                                 Text="{Binding Path=Lyricist, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                        </StackPanel>
+                <DockPanel Grid.Column="2" DataContext="{Binding FetchedSong}" Margin="10 0 0 0">
+                    <StackPanel DockPanel.Dock="Top">
+
+                        <Label Content="Fetched Metadata:" FontWeight="Bold" Margin="0 0 10 5" />
+
+                        <Button Style="{StaticResource CustomButtonStyle}" Grid.Column="1" Command="{Binding DataContext.CopyTagCommand, RelativeSource={RelativeSource AncestorType={x:Type mah:MetroWindow}}}" CommandParameter="cover">
+                            <Image Source="{Binding AlbumCover}" Width="150" Height="150" Margin="0 0 10 5" />
+                        </Button>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition MinWidth="10" Width="0.5*"/>
+                                <ColumnDefinition MinWidth="300" Width="*"/>
+                                <ColumnDefinition MinWidth="10" Width="0.5*"/>
+                            </Grid.ColumnDefinitions>
+
+
+                            <StackPanel Grid.Column="1">
+                                <Button x:Name="button" Margin="0 30 0 0" Command="{Binding DataContext.CopyTagCommand, RelativeSource={RelativeSource AncestorType={x:Type mah:MetroWindow}}}" CommandParameter="title">
+                                    <Button.Style>
+                                        <Style BasedOn="{StaticResource CustomButtonStyle}" TargetType="Button">
+                                            <Style.Triggers>
+                                                <Trigger Property="Button.IsMouseOver" Value="True">
+                                                    <Setter Property="ToolTip" Value="{Binding Path=Title}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+
+                                    <DockPanel Width="{Binding ElementName=button, Path=ActualWidth}">
+                                        <Label DockPanel.Dock="Left" Content="Title:"/>
+                                        <TextBlock Foreground="White" x:Name="titleText" Text="{Binding Path=Title}" VerticalAlignment="Center" TextAlignment="Right"/>
+                                    </DockPanel>
+                                </Button>
+
+
+                                <Button Margin="0 2" Command="{Binding DataContext.CopyTagCommand, RelativeSource={RelativeSource AncestorType={x:Type mah:MetroWindow}}}" CommandParameter="album">
+                                    <Button.Style>
+                                        <Style BasedOn="{StaticResource CustomButtonStyle}" TargetType="Button">
+                                            <Style.Triggers>
+                                                <Trigger Property="Button.IsMouseOver" Value="True">
+                                                    <Setter Property="ToolTip" Value="{Binding Path=AlbumName}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                    
+                                    <DockPanel Width="{Binding ElementName=button, Path=ActualWidth}">
+                                        <Label Content="Album:"/>
+                                        <TextBlock Foreground="White" Text="{Binding Path=AlbumName}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                    </DockPanel>
+                                </Button>
+
+                                <Button Command="{Binding DataContext.CopyTagCommand, RelativeSource={RelativeSource AncestorType={x:Type mah:MetroWindow}}}" CommandParameter="artist">
+                                    <Button.Style>
+                                        <Style BasedOn="{StaticResource CustomButtonStyle}" TargetType="Button">
+                                            <Style.Triggers>
+                                                <Trigger Property="Button.IsMouseOver" Value="True">
+                                                    <Setter Property="ToolTip" Value="{Binding Path=Artists}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                    
+                                    <DockPanel Width="{Binding ElementName=button, Path=ActualWidth}">
+                                        <Label Content="Artist(s):"/>
+                                        <TextBlock Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center" TextTrimming="CharacterEllipsis">
+                                            <TextBlock.Text>
+                                                <Binding Path="Artists" />
+                                            </TextBlock.Text>
+                                        </TextBlock>
+                                    </DockPanel>
+                                </Button>
+
+                                <Button Margin="0 2" Command="{Binding DataContext.CopyTagCommand, RelativeSource={RelativeSource AncestorType={x:Type mah:MetroWindow}}}" CommandParameter="year">
+                                    <Button.Style>
+                                        <Style BasedOn="{StaticResource CustomButtonStyle}" TargetType="Button">
+                                            <Style.Triggers>
+                                                <Trigger Property="Button.IsMouseOver" Value="True">
+                                                    <Setter Property="ToolTip" Value="{Binding Path=Year}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                    
+                                    <DockPanel Width="{Binding ElementName=button, Path=ActualWidth}">
+                                        <Label Content="Year:"/>
+                                        <TextBlock Foreground="White" Text="{Binding Path=Year}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                    </DockPanel>
+                                </Button>
+
+                                <Button Command="{Binding DataContext.CopyTagCommand, RelativeSource={RelativeSource AncestorType={x:Type mah:MetroWindow}}}" CommandParameter="genre">
+                                    <Button.Style>
+                                        <Style BasedOn="{StaticResource CustomButtonStyle}" TargetType="Button">
+                                            <Style.Triggers>
+                                                <Trigger Property="Button.IsMouseOver" Value="True">
+                                                    <Setter Property="ToolTip" Value="{Binding Path=Genre}" />
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                    
+                                    <DockPanel Width="{Binding ElementName=button, Path=ActualWidth}">
+                                        <Label Content="Genre:"/>
+                                        <TextBlock Foreground="White" Text="{Binding Path=Genre}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                    </DockPanel>
+                                </Button>
+
+                            </StackPanel>
+                        </Grid>
+
+                        <Button Margin="0 22 0 0" Command="{Binding DataContext.CopyTagCommand, RelativeSource={RelativeSource AncestorType={x:Type mah:MetroWindow}}}" CommandParameter="lyricist">
+                            <Button.Style>
+                                <Style BasedOn="{StaticResource CustomButtonStyle}" TargetType="Button">
+                                    <Style.Triggers>
+                                        <Trigger Property="Button.IsMouseOver" Value="True">
+                                            <Setter Property="ToolTip" Value="{Binding Path=Lyricist}" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            
+                            <DockPanel HorizontalAlignment="Center" Margin="10">
+                                <Label Content="Lyricist:" Height="auto" />
+                                <TextBlock MinWidth="80" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" TextTrimming="CharacterEllipsis"
+                                        Text="{Binding Path=Lyricist, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                            </DockPanel>
+                        </Button>
                     </StackPanel>
 
-                    <TextBox ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="0 20 0 0" Background="{DynamicResource SecondaryColor}" 
-                            Grid.Row="1" TextAlignment="Center" 
-                            Text="{Binding Path=Lyrics, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Button Command="{Binding DataContext.CopyTagCommand, RelativeSource={RelativeSource AncestorType={x:Type mah:MetroWindow}}}" CommandParameter="lyrics">
+                        <Button.Style>
+                            <Style BasedOn="{StaticResource CustomButtonStyle}" TargetType="Button">
+                                <Style.Triggers>
+                                    <Trigger Property="Button.IsMouseOver" Value="True">
+                                        <Setter Property="ToolTip" Value="{Binding Path=Lyrics}" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        
+                        <TextBlock DockPanel.Dock="Bottom" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="0 10 0 0" Grid.Row="1" TextAlignment="Center" Height="auto" Text="{Binding Path=Lyrics, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="White"/>
+                    </Button>
+                   
                 </DockPanel>
+
             </Grid>
         </ScrollViewer>
     </DockPanel>

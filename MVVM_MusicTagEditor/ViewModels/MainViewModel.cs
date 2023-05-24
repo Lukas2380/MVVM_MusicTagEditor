@@ -192,6 +192,12 @@ namespace MVVM_MusicTagEditor.ViewModels
         private void EditWindow_Closing(object sender, CancelEventArgs e)
         {
             this.EditSelectionCanExecute = true;
+            
+            //set the mainwindow to be in the foreground
+            var mainWindow = Application.Current.MainWindow;
+            mainWindow.WindowState = WindowState.Normal;
+            mainWindow.Show();
+            mainWindow.Activate();
         }
 
         /// <summary>
@@ -219,7 +225,7 @@ namespace MVVM_MusicTagEditor.ViewModels
         }
 
         /// <summary>
-        /// Occures when the user clicks the student view button.
+        /// Occures when the user clicks the song view button.
         /// </summary>
         /// <param name="parameter">Data used by the command.</param>
         private void SongViewCommandExecute(object parameter)

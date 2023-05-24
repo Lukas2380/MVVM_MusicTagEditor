@@ -1,6 +1,7 @@
 ﻿using Common.NotifyPropertyChanged;
 using System;
 using System.Linq;
+using System.Windows;
 using System.Windows.Media.Imaging;
 
 namespace Data
@@ -22,6 +23,17 @@ namespace Data
 
         #region ------------------------- Constructors, Destructors, Dispose, Clone ---------------------------------------
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Song"/> class.
+        /// </summary>
+        /// <param name="title">Title of the song.</param>
+        /// <param name="artists">Array of artists involved in the song.</param>
+        /// <param name="albumName">Name of the album the song belongs to.</param>
+        /// <param name="year">Year when the song was released. Can be null.</param>
+        /// <param name="albumCover">Image of the album cover.</param>
+        /// <param name="genre">Genre of the song.</param>
+        /// <param name="lyrics">Lyrics of the song.</param>
+        /// <param name="lyricist">Lyricist of the song.</param>
         public Song(string title, string[] artists, string albumName, int? year, BitmapImage albumCover, string genre, string lyrics, string lyricist)
         {
             this.title = title;
@@ -33,10 +45,28 @@ namespace Data
             this.lyrics = lyrics;
             this.lyricist = lyricist;
         }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Song"/> class with default values.
+        /// </summary>
+        public Song()
+        {
+            this.title = "";
+            this.artists = null;
+            this.albumName = "";
+            this.year = null;
+            this.albumCover = null;
+            this.genre = "";
+            this.lyrics = "";
+            this.lyricist = "";
+        }
         #endregion
 
         #region ------------------------- Properties, Indexers ------------------------------------------------------------
 
+        /// <summary>
+        /// Gets or sets the title of the song.
+        /// </summary>
         public string Title
         {
             get
@@ -52,6 +82,10 @@ namespace Data
                 }
             }
         }
+
+        /// <summary>
+        /// Gets or sets the artists of a song.
+        /// </summary>
         public string Artists
         {
             get
@@ -68,14 +102,17 @@ namespace Data
             }
         }
 
-        public string SongDisplay
-        {
-            get
-            {
-                return this.Title + " - " + StringArrayToString(this.artists);
-            }
-        }
+        //public string SongDisplay
+        //{
+        //    get
+        //    {
+        //        return this.Title + " - " + StringArrayToString(this.artists);
+        //    }
+        //}
 
+        /// <summary>
+        /// Gets or sets the albumname of a song.
+        /// </summary>
         public string AlbumName
         {
             get
@@ -92,6 +129,10 @@ namespace Data
             }
         }
         
+        /// <summary>
+        /// Gets or sets the year of a song. 
+        /// The int? means that the integer can be zero.
+        /// </summary>
         public int? Year
         {
             get
@@ -108,6 +149,9 @@ namespace Data
             }
         }
 
+        /// <summary>
+        /// Gets or sets the albumcover as a <see cref="BitmapImage"/> of a song.
+        /// </summary>
         public BitmapImage AlbumCover
         {
             get
@@ -124,6 +168,9 @@ namespace Data
             }
         }
 
+        /// <summary>
+        /// Gets or sets the genre of a song.
+        /// </summary>
         public string Genre
         {
             get => this.genre;
@@ -137,6 +184,9 @@ namespace Data
             }
         }
 
+        /// <summary>
+        /// Gets or sets the lyrics of a song.
+        /// </summary>
         public string Lyrics
         {
             get => this.lyrics;
@@ -150,6 +200,9 @@ namespace Data
             }
         }
 
+        /// <summary>
+        /// Gets or sets the lyricist of a song.
+        /// </summary>
         public string Lyricist
         {
             get => lyricist;
@@ -165,25 +218,27 @@ namespace Data
         #endregion
 
         #region ------------------------- Private helper ------------------------------------------------------------------
-        //public override string ToString()
-        //{
-        //    return this.Title;
-        //}
-
+        /// <summary>
+        /// Converts an array of strings to a single string.
+        /// </summary>
+        /// <param name="strArr">The array of strings to be converted.</param>
+        /// <returns>A string of the array, or null if the array is null.</returns>
         public string StringArrayToString(string[] strArr)
         {
             string str = "";
-            foreach (var s in strArr)
+
+            if (strArr != null)
             {
-                if (s == null)
-                    return null;
-                str += s;
+                foreach (var s in strArr)
+                {
+                    if (s == null)
+                        return null;
+                    str += s;
+                }
             }
+
             return str;
         }
-        #endregion
-
-        #region ------------------------- Commands ------------------------------------------------------------------------
         #endregion
     }
 }
