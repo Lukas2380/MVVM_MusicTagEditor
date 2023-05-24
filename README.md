@@ -17,7 +17,6 @@ Es bietet eine intuitive Benutzeroberfläche, die es dem Nutzer ermöglicht, Mus
 - Integration mit Online-Musikdiensten, um automatisch Informationen und Albumcover zu erhalten
 - Hinzufügen und Anzeigen von Songtexten
 - Bearbeiten von Albumcovern oder Hinzufügen eigener Cover
-- Exportieren der Musikbibliothek als CSV-Datei
 
 ## Mögliche Erweiterungen
 
@@ -44,7 +43,6 @@ Es bietet eine intuitive Benutzeroberfläche, die es dem Nutzer ermöglicht, Mus
 1. Importieren Sie Ihre Musikdateien oder Ordner.
 2. Bearbeiten Sie die Metadaten der Musikdateien nach Bedarf.
 3. Nutzen Sie die Such-, Sortier- und Filterfunktionen, um Ihre Musikbibliothek zu organisieren.
-4. Exportieren Sie Ihre Musikbibliothek als CSV-Datei.
 
 ## Mitwirkende
 
