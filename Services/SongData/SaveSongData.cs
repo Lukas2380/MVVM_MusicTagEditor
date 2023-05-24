@@ -41,11 +41,11 @@ namespace Services.SongData
 
                     tag.Title = song.Title;
 
-                    //tag.Artists.Value.Clear();
-                    //tag.Artists.Value.Add(song.Artists);
+                    tag.Artists.Value.Clear();
+                    tag.Artists.Value.Add(song.Artists);
 
-                    //tag.Album = song.AlbumName;
-                    //tag.Year = song.Year;
+                    tag.Album = song.AlbumName;
+                    tag.Year = song.Year;
 
                     //// Create a new picture frame with the album cover
                     //var pictureFrame = new PictureFrame
@@ -58,16 +58,26 @@ namespace Services.SongData
                     //tag.Pictures.Clear();
                     //tag.Pictures.Add(pictureFrame);
 
-                    //tag.Genre = song.Genre;
+                    tag.Genre = song.Genre;
 
-                    //tag.Lyrics.Clear();
-                    //tag.Lyrics.Add(song.Lyrics);
+                    tag.Lyrics.Clear();
+                    tag.Lyrics.Add(song.Lyrics);
 
-                    //tag.Lyricists.Value.Clear();
-                    //tag.Lyricists.Value.Add(song.Lyricist);
+                    tag.Lyricists.Value.Clear();
+                    tag.Lyricists.Value.Add(song.Lyricist);
+
+                    // Neither of them work with V2, nothing I can do
+
+                    mp3.WriteTag(tag, Id3Version.V1X, WriteConflictAction.Replace);
 
 
-                    //mp3.WriteTag(tag, Id3Version.V23, WriteConflictAction.Replace);
+
+
+
+
+
+
+
                     //mp3.UpdateTag(tag);
                 }
 

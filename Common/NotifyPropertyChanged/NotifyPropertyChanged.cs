@@ -23,13 +23,8 @@ namespace Common.NotifyPropertyChanged
         {
             if (PropertyChanged != null)
             {
-                synchronizationContext.Send(state =>
-                {
-                    PropertyChanged(this, new PropertyChangedEventArgs(property));
-                }, null);
+                this.PropertyChanged(this, new PropertyChangedEventArgs(property));
             }
         }
     }
-
-
 }

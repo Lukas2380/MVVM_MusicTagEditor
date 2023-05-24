@@ -1,0 +1,92 @@
+\doxysection{Common.\+Command.\+Action\+Command Class Reference}
+\hypertarget{class_common_1_1_command_1_1_action_command}{}\label{class_common_1_1_command_1_1_action_command}\index{Common.Command.ActionCommand@{Common.Command.ActionCommand}}
+
+
+Action Command Implementing ICommand.  
+
+
+Inheritance diagram for Common.\+Command.\+Action\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_common_1_1_command_1_1_action_command}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_common_1_1_command_1_1_action_command_ae1d59e2bd4646356ecd0bf487f2158e1}{Action\+Command}} (Action$<$ object $>$ execute, Func$<$ object, bool $>$ can\+Execute)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the Action\+Command class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_common_1_1_command_1_1_action_command_a5a4cf06708266306b8fda94a1da367ee}{Execute}} (object parameter)
+\begin{DoxyCompactList}\small\item\em Defines the method to be called when the command is invoked. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_common_1_1_command_1_1_action_command_a6f36f661a3f3918b1a6b2b8ea79f0ab2}{Can\+Execute}} (object parameter)
+\begin{DoxyCompactList}\small\item\em Defines the method that determines whether the command can execute in its current state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_common_1_1_command_1_1_action_command_a11b7b1a07a51018556cc1015fc5f2dbb}\label{class_common_1_1_command_1_1_action_command_a11b7b1a07a51018556cc1015fc5f2dbb} 
+Event\+Handler {\bfseries Can\+Execute\+Changed}
+\begin{DoxyCompactList}\small\item\em Occurs when changes occur that affect whether or not the command should execute. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Action Command Implementing ICommand. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_common_1_1_command_1_1_action_command_ae1d59e2bd4646356ecd0bf487f2158e1}\label{class_common_1_1_command_1_1_action_command_ae1d59e2bd4646356ecd0bf487f2158e1} 
+\index{Common.Command.ActionCommand@{Common.Command.ActionCommand}!ActionCommand@{ActionCommand}}
+\index{ActionCommand@{ActionCommand}!Common.Command.ActionCommand@{Common.Command.ActionCommand}}
+\doxysubsubsection{\texorpdfstring{ActionCommand()}{ActionCommand()}}
+{\footnotesize\ttfamily Common.\+Command.\+Action\+Command.\+Action\+Command (\begin{DoxyParamCaption}\item[{Action$<$ object $>$}]{execute,  }\item[{Func$<$ object, bool $>$}]{can\+Execute }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the Action\+Command class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em execute} & The method called when Execute() is invoked.\\
+\hline
+{\em can\+Execute} & The method called when Can\+Execute() is invoked.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_common_1_1_command_1_1_action_command_a6f36f661a3f3918b1a6b2b8ea79f0ab2}\label{class_common_1_1_command_1_1_action_command_a6f36f661a3f3918b1a6b2b8ea79f0ab2} 
+\index{Common.Command.ActionCommand@{Common.Command.ActionCommand}!CanExecute@{CanExecute}}
+\index{CanExecute@{CanExecute}!Common.Command.ActionCommand@{Common.Command.ActionCommand}}
+\doxysubsubsection{\texorpdfstring{CanExecute()}{CanExecute()}}
+{\footnotesize\ttfamily bool Common.\+Command.\+Action\+Command.\+Can\+Execute (\begin{DoxyParamCaption}\item[{object}]{parameter }\end{DoxyParamCaption})}
+
+
+
+Defines the method that determines whether the command can execute in its current state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & Data used by the command. If the command does not require data to be passed, this object can be set to null.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if this command can be executed; otherwise {\ttfamily false}. 
+\end{DoxyReturn}
+\Hypertarget{class_common_1_1_command_1_1_action_command_a5a4cf06708266306b8fda94a1da367ee}\label{class_common_1_1_command_1_1_action_command_a5a4cf06708266306b8fda94a1da367ee} 
+\index{Common.Command.ActionCommand@{Common.Command.ActionCommand}!Execute@{Execute}}
+\index{Execute@{Execute}!Common.Command.ActionCommand@{Common.Command.ActionCommand}}
+\doxysubsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily void Common.\+Command.\+Action\+Command.\+Execute (\begin{DoxyParamCaption}\item[{object}]{parameter }\end{DoxyParamCaption})}
+
+
+
+Defines the method to be called when the command is invoked. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & Data used by the command. If the command does not require data to be passed, this object can be set to null.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/lukas/\+One\+Drive -\/ HTBLu\+VA Mödling/\+Schule/56\+AAIFT/\+POS/\+MVVM\+\_\+\+Music\+Tag\+Editor/\+Common/\+Command/Action\+Command.\+cs\end{DoxyCompactItemize}
