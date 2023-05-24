@@ -173,7 +173,7 @@ namespace MVVM_MusicTagEditor.ViewModels
 
                     if (tag != null)
                     {
-                        songs.Add(CreateSong(tag));
+                        songs.Add(CreateSong(tag, musicFile));
                     }
                 }
 
@@ -190,13 +190,13 @@ namespace MVVM_MusicTagEditor.ViewModels
         /// </summary>
         /// <param name="tag"></param>
         /// <returns></returns>
-        private Song CreateSong(Id3Tag tag)
+        private Song CreateSong(Id3Tag tag, string location)
         {
             BitmapImage coverImage = GetSongData.GetAlbumCover(tag);
             string lyrics = GetSongData.GetLyrics(tag);
             string genre = GetSongData.GetGenre(tag);
 
-            return new Song(tag.Title, tag.Artists.Value.ToArray(), tag.Album, tag.Year.Value, coverImage, genre, lyrics, tag.Lyricists);
+            return new Song(tag.Title, tag.Artists.Value.ToArray(), tag.Album, tag.Year.Value, coverImage, genre, lyrics, tag.Lyricists, location);
         }
 
         private void OnSongDataChanged(Song song)

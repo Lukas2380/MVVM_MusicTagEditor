@@ -1,6 +1,7 @@
 ﻿using Common.NotifyPropertyChanged;
 using System;
 using System.Linq;
+using System.Security.Policy;
 using System.Windows;
 using System.Windows.Media.Imaging;
 
@@ -18,6 +19,7 @@ namespace Data
         private string genre;
         private string lyrics;
         private string lyricist;
+        private string fileLocation;
 
         #endregion
 
@@ -34,7 +36,7 @@ namespace Data
         /// <param name="genre">Genre of the song.</param>
         /// <param name="lyrics">Lyrics of the song.</param>
         /// <param name="lyricist">Lyricist of the song.</param>
-        public Song(string title, string[] artists, string albumName, int? year, BitmapImage albumCover, string genre, string lyrics, string lyricist)
+        public Song(string title, string[] artists, string albumName, int? year, BitmapImage albumCover, string genre, string lyrics, string lyricist, string fileLocation)
         {
             this.title = title;
             this.artists = artists;
@@ -44,6 +46,7 @@ namespace Data
             this.genre = genre;
             this.lyrics = lyrics;
             this.lyricist = lyricist;
+            this.fileLocation = fileLocation;
         }
 
         /// <summary>
@@ -205,13 +208,26 @@ namespace Data
         /// </summary>
         public string Lyricist
         {
-            get => lyricist;
+            get => this.lyricist;
             set
             {
                 if (this.lyricist != value)
                 {
                     this.lyricist = value;
                     OnPropertyChanged(nameof(this.lyricist));
+                }
+            }
+        }
+
+        public string FileLocation
+        {
+            get => this.fileLocation;
+            set
+            {
+                if (this.fileLocation != value)
+                {
+                    this.fileLocation = value;
+                    OnPropertyChanged(nameof(this.fileLocation));
                 }
             }
         }

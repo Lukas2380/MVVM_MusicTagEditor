@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel;
+using System.Threading;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Common.NotifyPropertyChanged
 {
@@ -8,25 +10,26 @@ namespace Common.NotifyPropertyChanged
     /// </summary>
     public class NotifyPropertyChanged : INotifyPropertyChanged
     {
-        /// <summary>
-        /// Multicast event for property change notifications.
-        /// </summary>
+        private readonly SynchronizationContext synchronizationContext;
+
+        public NotifyPropertyChanged()
+        {
+            synchronizationContext = SynchronizationContext.Current;
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
-        /// <summary>
-        /// Notifies listeners that a property value has changed.
-        /// Name of the property used to notify listeners.  
-        /// </summary>
-        /// <param name="property">Name of the property. This value is optional and 
-        /// can be provided automatically when invoked from compilers.
-        /// </param>
         public void OnPropertyChanged(string property)
         {
-            if (this.PropertyChanged != null)
+            if (PropertyChanged != null)
             {
-                this.PropertyChanged(this, new PropertyChangedEventArgs(property));
+                synchronizationContext.Send(state =>
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs(property));
+                }, null);
             }
         }
     }
+
 
 }
