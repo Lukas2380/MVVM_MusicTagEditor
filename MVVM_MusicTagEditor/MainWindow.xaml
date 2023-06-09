@@ -22,27 +22,41 @@
         WindowStyle="None">
     <Grid>
         <DockPanel>
-            
-            <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Left" Width="{Binding ElementName=LeftPanel, Path=ActualWidth}">
-                <Button Content="Menu" Margin="5 5 0 0" Width="50" HorizontalAlignment="Left" 
+            <DockPanel DockPanel.Dock="Top">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding ElementName=LeftPanel, Path=ActualWidth}"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <DockPanel Margin="0 0 10 0">
+                        <Button Content="Menu" Margin="5 5 0 0" Width="50" HorizontalAlignment="Left" 
                         Style="{DynamicResource MahApps.Styles.Button}" Command="{Binding ToggleMenuCommand}" Background="{DynamicResource MahApps.Brushes.Accent2}"/>
-                <StackPanel Orientation="Horizontal" Visibility="{Binding MenuVisibility}">
-                    <Button Margin="5 5 0 0" Content="Switch Theme" Command="{Binding ToggleThemeCommand}" 
+                        <StackPanel Orientation="Horizontal" Visibility="{Binding MenuVisibility}">
+                            <Button Margin="5 5 0 0" Content="Switch Theme" Command="{Binding ToggleThemeCommand}" 
                             Style="{DynamicResource MahApps.Styles.Button}" Background="{DynamicResource MahApps.Brushes.Accent3}"/>
-                    <Button Margin="5 5 0 0" Content="Choose directory" Command="{Binding ChooseDirectoryCommand}" 
+                            <Button Margin="5 5 0 0" Content="Choose directory" Command="{Binding ChooseDirectoryCommand}" 
                             Style="{DynamicResource MahApps.Styles.Button}" Background="{DynamicResource MahApps.Brushes.Accent3}"/>
-                </StackPanel>
-                <Button HorizontalAlignment="Right" Width="100" Content="Edit Selection" Command="{Binding EditSelectionCommand}" 
+                        </StackPanel>
+                        <Button HorizontalAlignment="Right" Width="100" Content="Edit Selection" Command="{Binding EditSelectionCommand}" 
                         Margin="5 5 18 0" Style="{DynamicResource MahApps.Styles.Button}" Background="{DynamicResource MahApps.Brushes.Accent3}"></Button>
+                    </DockPanel>
+
+                    <DockPanel Grid.Column="1" Margin="10 0 0 0">
+                        <Button HorizontalAlignment="Left" Width="100" Content="Save Changes" Command="{Binding SaveChangesCommand}" 
+                        Margin="5 5 18 0" Style="{DynamicResource MahApps.Styles.Button}" Background="{DynamicResource MahApps.Brushes.Accent3}"></Button>
+                    </DockPanel>
+                </Grid>
             </DockPanel>
-    
+
             <Grid>
-                <Grid.ColumnDefinitions>    
+                <Grid.ColumnDefinitions>
                     <ColumnDefinition MinWidth="300" Width="*"/>
                     <ColumnDefinition MaxWidth="500"/>
                 </Grid.ColumnDefinitions>
                 <ContentControl x:Name="LeftPanel" Grid.Column="0" Content="{Binding Path=CurrentViewLeft}"/>
-                <ContentControl Grid.Column="1" Content="{Binding Path=CurrentViewRight}"/>
+                <ContentControl x:Name="RightPanel" Grid.Column="1" Content="{Binding Path=CurrentViewRight}"/>
             </Grid>
         </DockPanel>
     </Grid>

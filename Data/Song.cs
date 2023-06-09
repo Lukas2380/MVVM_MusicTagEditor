@@ -19,6 +19,15 @@ namespace Data
         private string lyrics;
         private string lyricist;
 
+        private string filePath;
+
+        public string FilePath
+        {
+            get { return filePath; }
+            set { filePath = value; }
+        }
+
+
         #endregion
 
         #region ------------------------- Constructors, Destructors, Dispose, Clone ---------------------------------------
@@ -34,7 +43,7 @@ namespace Data
         /// <param name="genre">Genre of the song.</param>
         /// <param name="lyrics">Lyrics of the song.</param>
         /// <param name="lyricist">Lyricist of the song.</param>
-        public Song(string title, string[] artists, string albumName, int? year, BitmapImage albumCover, string genre, string lyrics, string lyricist)
+        public Song(string title, string[] artists, string albumName, int? year, BitmapImage albumCover, string genre, string lyrics, string lyricist, string filePath)
         {
             this.title = title;
             this.artists = artists;
@@ -44,6 +53,7 @@ namespace Data
             this.genre = genre;
             this.lyrics = lyrics;
             this.lyricist = lyricist;
+            this.filePath = filePath;
         }
 
         /// <summary>
@@ -59,6 +69,7 @@ namespace Data
             this.genre = "";
             this.lyrics = "";
             this.lyricist = "";
+            this.filePath = "";
         }
         #endregion
 

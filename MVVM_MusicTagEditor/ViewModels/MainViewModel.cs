@@ -1,12 +1,14 @@
 ﻿using Common.Command;
 using Common.NotifyPropertyChanged;
 using ControlzEx.Theming;
+using Data;
 using Microsoft.Practices.Prism.Events;
 using Microsoft.Win32;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using MVVM_MusicTagEditor.Events;
 using MVVM_MusicTagEditor.Views;
 using Services.Dialog;
+using Services.SongData;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,6 +55,7 @@ namespace MVVM_MusicTagEditor.ViewModels
             this.ChooseDirectoryCommand = new ActionCommand(this.ChooseDirectoryCommandExecute, this.ChooseDirectoryCommandCanExecute);
             this.ToggleMenuCommand = new ActionCommand(this.ToggleMenuCommandExecute, this.ToggleMenuCommandCanExecute);
             this.EditSelectionCommand = new ActionCommand(this.EditSelectionCommandExecute, this.EditSelectionCommandCanExecute);
+            this.SaveChangesCommand = new ActionCommand(this.SaveChangesCommandExecute, this.SaveChangesCommandCanExecute);
 
             // Init infoview and infoviewmodel
             this.infoView = new InfoView();
@@ -61,7 +64,7 @@ namespace MVVM_MusicTagEditor.ViewModels
 
             // Init songViewTemplate and model
             this.songViewTemplate = new SongViewTemplate();
-            
+
             // Init theme
             this.IsDarkTheme = Application.Current.Resources.Source.ToString().Contains("dark") ? false : true;
             this.MenuVisibility = "Collapsed";
@@ -78,13 +81,14 @@ namespace MVVM_MusicTagEditor.ViewModels
         #endregion
 
         #region ------------------------- Properties, Indexers ----------------------------------------------
-        
+
         public ICommand SongViewCommand { get; private set; }
         public ICommand InfoViewCommand { get; private set; }
         public ICommand ToggleThemeCommand { get; private set; }
         public ICommand ChooseDirectoryCommand { get; private set; }
         public ICommand ToggleMenuCommand { get; private set; }
         public ICommand EditSelectionCommand { get; private set; }
+        public ICommand SaveChangesCommand { get; private set; }
 
         /// <summary>
         /// Gets or sets the view that is currently bound to the <see cref="ContentControl"/> left.
@@ -130,10 +134,10 @@ namespace MVVM_MusicTagEditor.ViewModels
         public bool IsDarkTheme
         {
             get { return this.isDarkTheme; }
-            set 
-            { 
+            set
+            {
                 if (this.isDarkTheme != value)
-                { this.isDarkTheme = value;}
+                { this.isDarkTheme = value; }
             }
         }
 
@@ -207,7 +211,7 @@ namespace MVVM_MusicTagEditor.ViewModels
         private void EditWindow_Closing(object sender, CancelEventArgs e)
         {
             this.EditSelectionCanExecute = true;
-            
+
             //set the mainwindow to be in the foreground
             var mainWindow = Application.Current.MainWindow;
             mainWindow.WindowState = WindowState.Normal;
@@ -318,7 +322,9 @@ namespace MVVM_MusicTagEditor.ViewModels
         private void ChooseDirectoryCommandExecute(object parameter)
         {
             if (ChangeDirectoryService.ChangeDirectory(out string directory))
+            {
                 this.EventAggregator.GetEvent<ChangedSongViewDataEvent>().Publish(directory);
+            }
         }
         #endregion
 
@@ -382,6 +388,27 @@ namespace MVVM_MusicTagEditor.ViewModels
                 if (editWindow != null)
                     editWindow.Closing += EditWindow_Closing;
             }
+        }
+        #endregion
+
+        #region SaveChangesCommand
+        /// <summary>
+        /// Determines whether the SaveChangesCommand can be executed.
+        /// </summary>
+        /// <param name="arg">The command parameter.</param>
+        /// <returns>True.</returns>
+        private bool SaveChangesCommandCanExecute(object arg)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// Executes the SaveChangesCommand.
+        /// </summary>
+        /// <param name="obj">The command parameter.</param>
+        private void SaveChangesCommandExecute(object obj)
+        {
+            SaveSongData.SaveChanges(this.songViewModel.Songs.ToList());
         }
         #endregion
 
