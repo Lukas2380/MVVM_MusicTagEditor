@@ -71,6 +71,19 @@ namespace Data
             this.lyricist = "";
             this.filePath = "";
         }
+
+        public Song(Song s)
+        {
+            this.title = s.title;
+            this.artists = s.artists;
+            this.albumName = s.albumName;
+            this.year = s.year;
+            this.albumCover = s.albumCover;
+            this.genre = s.genre;
+            this.lyrics = s.lyrics;
+            this.lyricist = s.lyricist;
+            this.filePath = s.filePath;
+        }
         #endregion
 
         #region ------------------------- Properties, Indexers ------------------------------------------------------------

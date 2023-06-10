@@ -15,7 +15,6 @@ namespace Data
         public string Artists { get; set; }
         public string AlbumName { get; set; }
         public int? Year { get; set; }
-        public BitmapImage AlbumCover { get; set; }
         public string Genre { get; set; }
         public string Lyrics { get; set; }
         public string Lyricist { get; set; }
@@ -26,10 +25,9 @@ namespace Data
         public int Id { get; set; } // Primary key
 
         public string Title { get; set; }
-        public string[] Artists { get; set; }
+        public string Artists { get; set; }
         public string AlbumName { get; set; }
         public int? Year { get; set; }
-        public BitmapImage AlbumCover { get; set; }
         public string Genre { get; set; }
         public string Lyrics { get; set; }
         public string Lyricist { get; set; }

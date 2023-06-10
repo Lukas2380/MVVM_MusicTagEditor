@@ -95,7 +95,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SongData\Genres.cs" />
     <Compile Include="SongData\GetSongData.cs" />
-    <Compile Include="SongData\SaveSongData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

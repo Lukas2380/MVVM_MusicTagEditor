@@ -6,6 +6,8 @@ using Services.FetchMetadata;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -36,6 +38,8 @@ namespace MVVM_MusicTagEditor.ViewModels
 
             SelectedItems = selectedItems;
             currentSelectedItems = new List<Song>(SelectedItems);
+
+            SongDbContext.EditedSongs.AddRange(currentSelectedItems);
 
             this.selectedSongNr = 0;
             CurrentSong = currentSelectedItems[this.selectedSongNr];

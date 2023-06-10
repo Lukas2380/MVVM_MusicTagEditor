@@ -408,7 +408,8 @@ namespace MVVM_MusicTagEditor.ViewModels
         /// <param name="obj">The command parameter.</param>
         private void SaveChangesCommandExecute(object obj)
         {
-            SaveSongData.SaveChanges(this.songViewModel.Songs.ToList());
+            SongDbContext.SaveChangedSongs();
+            MessageBox.Show("Songs saved to the database");
         }
         #endregion
 

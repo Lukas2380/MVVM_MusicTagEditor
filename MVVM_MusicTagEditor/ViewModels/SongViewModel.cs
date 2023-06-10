@@ -185,8 +185,34 @@ namespace MVVM_MusicTagEditor.ViewModels
             e.Result = songs;
 
             // Load songs to db
-            SongDbContext.CreateNewDataBase(songs.ToList());
+            ExecuteCreateNewDatabaseInBackground(songs.ToList());
         }
+
+        private void ExecuteCreateNewDatabaseInBackground(List<Song> songs)
+        {
+            BackgroundWorker worker = new BackgroundWorker();
+            worker.DoWork += (sender, e) =>
+            {
+                // Execute the CreateNewDataBase method in the background
+                SongDbContext.CreateNewDataBase(songs);
+            };
+            worker.RunWorkerCompleted += (sender, e) =>
+            {
+                if (e.Error != null)
+                {
+                    // Handle any errors that occurred during the execution
+                    // You can access the exception using e.Error
+                }
+                else
+                {
+                    // Execution completed successfully
+                }
+            };
+
+            // Start the background worker
+            worker.RunWorkerAsync();
+        }
+
 
         /// <summary>
         /// The create song method creates a new song based on the <see cref="Id3Tag"/>.
