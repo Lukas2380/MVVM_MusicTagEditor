@@ -71,10 +71,10 @@ namespace Data
                         Year = s.Year,
                         Genre = s.Genre,
                         Lyrics = s.Lyrics,
-                        Lyricist = s.Lyricist
+                        Lyricist = s.Lyricist,
                     };
 
-                    // Add the new original song to the DbSet
+                    // Add the new updated song to the DbSet
                     context.UpdatedSongs.Add(updatedSong);
                 }
 

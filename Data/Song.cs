@@ -1,6 +1,7 @@
 ﻿using Common.NotifyPropertyChanged;
 using System;
 using System.Linq;
+using System.Security.Permissions;
 using System.Windows;
 using System.Windows.Media.Imaging;
 
@@ -20,11 +21,24 @@ namespace Data
         private string lyricist;
 
         private string filePath;
+        private int id;
 
         public string FilePath
         {
-            get { return filePath; }
-            set { filePath = value; }
+            get { return this.filePath; }
+            set { this.filePath = value; }
+        }
+
+        public int Id
+        {
+            get
+            {
+                return this.id;
+            }
+            set
+            {
+                this.id = value;
+            }
         }
 
 
@@ -43,7 +57,7 @@ namespace Data
         /// <param name="genre">Genre of the song.</param>
         /// <param name="lyrics">Lyrics of the song.</param>
         /// <param name="lyricist">Lyricist of the song.</param>
-        public Song(string title, string[] artists, string albumName, int? year, BitmapImage albumCover, string genre, string lyrics, string lyricist, string filePath)
+        public Song(string title, string[] artists, string albumName, int? year, BitmapImage albumCover, string genre, string lyrics, string lyricist, string filePath, int id)
         {
             this.title = title;
             this.artists = artists;
@@ -54,6 +68,7 @@ namespace Data
             this.lyrics = lyrics;
             this.lyricist = lyricist;
             this.filePath = filePath;
+            this.id = id;
         }
 
         /// <summary>
@@ -70,6 +85,7 @@ namespace Data
             this.lyrics = "";
             this.lyricist = "";
             this.filePath = "";
+            this.id = 0;
         }
 
         public Song(Song s)
@@ -83,6 +99,7 @@ namespace Data
             this.lyrics = s.lyrics;
             this.lyricist = s.lyricist;
             this.filePath = s.filePath;
+            this.id = s.id;
         }
         #endregion
 

@@ -156,6 +156,7 @@ namespace MVVM_MusicTagEditor.ViewModels
             string[] musicFiles = Directory.GetFiles(@songdirectory);
             int totalFiles = musicFiles.Length;
             int filesProcessed = 0;
+            int id = 1;
             foreach (var musicFile in musicFiles)
             {
                 if (worker.CancellationPending)
@@ -173,12 +174,13 @@ namespace MVVM_MusicTagEditor.ViewModels
 
                     if (tag != null)
                     {
-                        songs.Add(CreateSong(tag, musicFile));
+                        songs.Add(CreateSong(tag, musicFile, id));
                     }
                 }
 
                 filesProcessed++;
                 ProgressBarValue = (int)((float)filesProcessed / (float)totalFiles * 100);
+                id++;
             }
 
             // Set Songs
@@ -219,13 +221,13 @@ namespace MVVM_MusicTagEditor.ViewModels
         /// </summary>
         /// <param name="tag"></param>
         /// <returns></returns>
-        private Song CreateSong(Id3Tag tag, string location)
+        private Song CreateSong(Id3Tag tag, string location, int id)
         {
             BitmapImage coverImage = GetSongData.GetAlbumCover(tag);
             string lyrics = GetSongData.GetLyrics(tag);
             string genre = GetSongData.GetGenre(tag);
 
-            return new Song(tag.Title, tag.Artists.Value.ToArray(), tag.Album, tag.Year.Value, coverImage, genre, lyrics, tag.Lyricists, location);
+            return new Song(tag.Title, tag.Artists.Value.ToArray(), tag.Album, tag.Year.Value, coverImage, genre, lyrics, tag.Lyricists, location, id);
         }
 
         private void OnSongDataChanged(Song song)
