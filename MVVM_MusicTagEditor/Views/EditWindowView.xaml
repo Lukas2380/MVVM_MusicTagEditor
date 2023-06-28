@@ -86,7 +86,7 @@
         </DockPanel>
 
         <ScrollViewer Margin="0 20 0 0">
-            <Grid>  
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="5"/>
@@ -193,7 +193,7 @@
                                             </Style.Triggers>
                                         </Style>
                                     </Button.Style>
-                                    
+
                                     <DockPanel Width="{Binding ElementName=button, Path=ActualWidth}">
                                         <Label Content="Album:"/>
                                         <TextBlock Foreground="White" Text="{Binding Path=AlbumName}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
@@ -210,7 +210,7 @@
                                             </Style.Triggers>
                                         </Style>
                                     </Button.Style>
-                                    
+
                                     <DockPanel Width="{Binding ElementName=button, Path=ActualWidth}">
                                         <Label Content="Artist(s):"/>
                                         <TextBlock Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center" TextTrimming="CharacterEllipsis">
@@ -231,7 +231,7 @@
                                             </Style.Triggers>
                                         </Style>
                                     </Button.Style>
-                                    
+
                                     <DockPanel Width="{Binding ElementName=button, Path=ActualWidth}">
                                         <Label Content="Year:"/>
                                         <TextBlock Foreground="White" Text="{Binding Path=Year}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
@@ -248,7 +248,7 @@
                                             </Style.Triggers>
                                         </Style>
                                     </Button.Style>
-                                    
+
                                     <DockPanel Width="{Binding ElementName=button, Path=ActualWidth}">
                                         <Label Content="Genre:"/>
                                         <TextBlock Foreground="White" Text="{Binding Path=Genre}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
@@ -268,7 +268,7 @@
                                     </Style.Triggers>
                                 </Style>
                             </Button.Style>
-                            
+
                             <DockPanel HorizontalAlignment="Center" Margin="10">
                                 <Label Content="Lyricist:" Height="auto" />
                                 <TextBlock MinWidth="80" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" TextTrimming="CharacterEllipsis"
@@ -287,10 +287,10 @@
                                 </Style.Triggers>
                             </Style>
                         </Button.Style>
-                        
+
                         <TextBlock DockPanel.Dock="Bottom" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="0 10 0 0" Grid.Row="1" TextAlignment="Center" Height="auto" Text="{Binding Path=Lyrics, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="White"/>
                     </Button>
-                   
+
                 </DockPanel>
 
             </Grid>

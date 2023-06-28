@@ -1,8 +1,10 @@
-﻿using Common.Command;
+﻿using ATL;
+using Common.Command;
 using Data;
 using Microsoft.Practices.Prism.Events;
 using Services.BitMapImageHelperMethods;
 using Services.FetchMetadata;
+using Services.SongData;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,6 +38,8 @@ namespace MVVM_MusicTagEditor.ViewModels
 
             SelectedItems = selectedItems;
             currentSelectedItems = new List<Song>(SelectedItems);
+
+            SaveSongData.EditedSongs.AddRange(currentSelectedItems);
 
             this.selectedSongNr = 0;
             CurrentSong = currentSelectedItems[this.selectedSongNr];
@@ -385,13 +389,13 @@ namespace MVVM_MusicTagEditor.ViewModels
             // Fetch the metadata
             FetchMetadata fetcher = new FetchMetadata(CurrentSong.Artists.ToString(), CurrentSong.Title);
 
-            // Assign valuse
+            // Assign values
             this.title = fetcher.Song;
             this.artists = fetcher.Artist;
             this.year = fetcher.ReleaseYear;
             this.albumName = fetcher.Album;
             this.lyrics = fetcher.Lyrics;
-            this.albumCover = BitMapImageHelper.CreateBitmapImageFromUrl(fetcher.CoverUrl).Result;
+            this.albumCover = fetcher.AlbumCover;
             this.websites = fetcher.Websites;
 
             if (this.backgroundWorker.CancellationPending)

@@ -9,13 +9,55 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
 namespace Services.BitMapImageHelperMethods
 {
     public class BitMapImageHelper
     {
+        public static BitmapImage ConvertImageToBitmapImage(byte[] imageData)
+        {
+            //using (MemoryStream memoryStream = new MemoryStream(imageData))
+            //{
+            //    using (Image image = Image.FromStream(memoryStream))
+            //    {
+            //        Bitmap bitmap = new Bitmap(image);
+            //        BitmapImage bitmapImage = new BitmapImage();
+
+            //        using (MemoryStream bitmapStream = new MemoryStream())
+            //        {
+            //            bitmap.Save(bitmapStream, ImageFormat.Png);
+            //            bitmapStream.Position = 0;
+
+            //            bitmapImage.BeginInit();
+            //            bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+            //            bitmapImage.StreamSource = bitmapStream;
+            //            bitmapImage.EndInit();
+            //            bitmapImage.Freeze();
+            //        }
+
+            //        return bitmapImage;
+            //    }
+            //}
+            BitmapSource bitmapSource = Clipboard.GetImage();
+
+            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+            MemoryStream memoryStream = new MemoryStream();
+            BitmapImage bImg = new BitmapImage();
+
+            encoder.Frames.Add(BitmapFrame.Create(bitmapSource));
+            encoder.Save(memoryStream);
+
+            memoryStream.Position = 0;
+            bImg.BeginInit();
+            bImg.StreamSource = memoryStream;
+            bImg.EndInit();
+
+            memoryStream.Close();
+            return bImg;
+        }
+
+
         /// <summary>
         /// The ConvertToBitmap method takes a filename from an image and creates a Bitmap for it.
         /// </summary>
@@ -61,13 +103,13 @@ namespace Services.BitMapImageHelperMethods
         /// </summary>
         /// <param name="url">The image url.</param>
         /// <returns>A bitmap image.</returns>
-        public static async Task<BitmapImage> CreateBitmapImageFromUrl(string url)
+        public static BitmapImage CreateBitmapImageFromUrl(string url)
         {
             try
             {
                 using (var webClient = new WebClient())
                 {
-                    byte[] imageData = await webClient.DownloadDataTaskAsync(url);
+                    byte[] imageData = webClient.DownloadData(url);
                     using (var stream = new MemoryStream(imageData))
                     {
                         BitmapImage bitmapImage = new BitmapImage();

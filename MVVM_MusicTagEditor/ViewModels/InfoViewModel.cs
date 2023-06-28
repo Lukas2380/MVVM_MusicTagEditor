@@ -1,4 +1,5 @@
-﻿using Common.Command;
+﻿using ATL;
+using Common.Command;
 using Data;
 using Microsoft.Practices.Prism.Events;
 using MVVM_MusicTagEditor.Events;
@@ -29,7 +30,7 @@ namespace MVVM_MusicTagEditor.ViewModels
         #endregion
 
         #region ------------------------- Properties, Indexers ------------------------------------------------------------
-        
+
         /// <summary>
         /// Gets or sets the title of the song.
         /// </summary>
@@ -115,7 +116,7 @@ namespace MVVM_MusicTagEditor.ViewModels
             this.OnPropertyChanged(nameof(Title));
             this.OnPropertyChanged(nameof(Artists));
             this.OnPropertyChanged(nameof(AlbumName));
-            this.OnPropertyChanged(nameof(AlbumCover));
+            this.OnPropertyChanged(nameof(AlbumCover)); // error here
             this.OnPropertyChanged(nameof(Lyrics));
             this.OnPropertyChanged(nameof(Lyricist));
             this.OnPropertyChanged(nameof(Year));

@@ -1,26 +1,21 @@
-﻿using Data;
+﻿using ATL;
+using Common.Command;
+using Data;
 using Microsoft.Practices.Prism.Events;
 using MVVM_MusicTagEditor.Events;
+using Services.BitMapImageHelperMethods;
+using Services.SongData;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Drawing.Imaging;
+using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Security.RightsManagement;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Windows.Media.Imaging;
-using System.Windows.Media;
-using System.Windows;
-using Id3;
-using Services.SongData;
-using System.ComponentModel;
 using System.Windows.Input;
-using Common.Command;
-using System.Collections;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace MVVM_MusicTagEditor.ViewModels
 {
@@ -35,7 +30,7 @@ namespace MVVM_MusicTagEditor.ViewModels
         #endregion
 
         #region ------------------------- Constructors, Destructors, Dispose, Clone ---------------------------------------
-        
+
         /// <summary>
         /// Initializes a new instance of the <see cref="SongViewModel"/> class.
         /// </summary>
@@ -156,6 +151,7 @@ namespace MVVM_MusicTagEditor.ViewModels
             string[] musicFiles = Directory.GetFiles(@songdirectory);
             int totalFiles = musicFiles.Length;
             int filesProcessed = 0;
+
             foreach (var musicFile in musicFiles)
             {
                 if (worker.CancellationPending)
@@ -164,39 +160,41 @@ namespace MVVM_MusicTagEditor.ViewModels
                     break;
                 }
 
-                // Error if used by another process!!
-                Exception ex;
-
-                using (var mp3 = new Mp3(musicFile))
+                try
                 {
-                    Id3Tag tag = mp3.GetTag(Id3TagFamily.Version2X);
-
-                    if (tag != null)
+                    Track track = new Track(musicFile);
+                    BitmapImage image = new BitmapImage();
+                    
+                    if (track.EmbeddedPictures.Count > 0)
                     {
-                        songs.Add(CreateSong(tag, musicFile));
+                        var coverData = track.EmbeddedPictures.FirstOrDefault().PictureData;
+                        using (var ms = new MemoryStream(coverData))
+                        {
+                            image = BitMapImageHelper.ToBitmapImage(new Bitmap(ms));
+                        }
                     }
+                    else
+                    {
+                        Bitmap bitmap = BitMapImageHelper.ConvertToBitmap("..\\..\\..\\img\\mp3.png");
+                        image = BitMapImageHelper.ToBitmapImage(bitmap);
+                    }
+
+                    Song song = new Song(track.Title, track.Artist.Split(','), track.Album, track.Year, image, track.Genre, track.Lyrics.UnsynchronizedLyrics, track.AdditionalFields.FirstOrDefault().Value, musicFile);
+
+                    songs.Add(song);
+                }
+                catch (Exception ex)
+                {
+                    // Handle any exceptions that occur during processing, e.g., file access errors
+                    // You can choose to log the error, skip the file, or take any other appropriate action
                 }
 
                 filesProcessed++;
-                ProgressBarValue = (int)((float)filesProcessed / (float)totalFiles * 100);
+                //ProgressBarValue = (int)((float)filesProcessed / (float)totalFiles * 100);
             }
 
             // Set Songs
             e.Result = songs;
-        }
-
-        /// <summary>
-        /// The create song method creates a new song based on the <see cref="Id3Tag"/>.
-        /// </summary>
-        /// <param name="tag"></param>
-        /// <returns></returns>
-        private Song CreateSong(Id3Tag tag, string location)
-        {
-            BitmapImage coverImage = GetSongData.GetAlbumCover(tag);
-            string lyrics = GetSongData.GetLyrics(tag);
-            string genre = GetSongData.GetGenre(tag);
-
-            return new Song(tag.Title, tag.Artists.Value.ToArray(), tag.Album, tag.Year.Value, coverImage, genre, lyrics, tag.Lyricists, location);
         }
 
         private void OnSongDataChanged(Song song)

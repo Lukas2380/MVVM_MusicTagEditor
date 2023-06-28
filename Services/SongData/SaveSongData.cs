@@ -1,7 +1,6 @@
-﻿using Data;
-using Id3;
-using Id3.Frames;
-using Id3.InfoFx;
+﻿using ATL;
+using ATL.AudioData;
+using Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +15,8 @@ namespace Services.SongData
 {
     public class SaveSongData
     {
+        public static List<Song> EditedSongs { get; set; } = new List<Song>();
+
         public static void SaveChanges(List<Song> songs)
         {
             BackgroundWorker saveWorker = new BackgroundWorker();
@@ -28,64 +29,48 @@ namespace Services.SongData
 
         private static void SaveWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            List<Song> songs = e.Argument as List<Song>;
-
-            int totalSongs = songs.Count();
+            int totalSongs = EditedSongs.Count;
             int processedSongs = 0;
 
-            foreach (var song in songs)
+            foreach (var song in EditedSongs)
             {
-                using (var mp3 = new Mp3(song.FileLocation, Mp3Permissions.ReadWrite))
+                Track mp3 = null;
+                try
                 {
-                    Id3Tag tag = mp3.GetTag(Id3TagFamily.Version2X);
+                    mp3 = new Track(song.FileLocation);
+                    mp3.Remove(MetaDataIOFactory.TagType.ID3V1);
+                    mp3.Remove(MetaDataIOFactory.TagType.ID3V2);
 
-                    tag.Title = song.Title;
+                    mp3.Title = song.Title;
+                    mp3.Artist = song.Artists;
+                    mp3.Album = song.AlbumName;
+                    mp3.Year = song.Year;
+                    mp3.Genre = song.Genre;
+                    mp3.Lyrics.UnsynchronizedLyrics = song.Lyrics;
+                    mp3.AdditionalFields.Add("text", song.Lyricist);
 
-                    tag.Artists.Value.Clear();
-                    tag.Artists.Value.Add(song.Artists);
+                    // Clear existing pictures
+                    mp3.EmbeddedPictures.Clear();
 
-                    tag.Album = song.AlbumName;
-                    tag.Year = song.Year;
+                    // Add album cover picture
+                    if (song.AlbumCover != null)
+                    {
+                        var pictureInfo = ATL.PictureInfo.fromBinaryData(ConvertBitmapImageToByteArray(song.AlbumCover), ATL.PictureInfo.PIC_TYPE.Front);
+                        mp3.EmbeddedPictures.Add(pictureInfo);
+                    }
 
-                    //// Create a new picture frame with the album cover
-                    //var pictureFrame = new PictureFrame
-                    //{
-                    //    PictureData = ConvertBitmapImageToByteArray(song.AlbumCover),
-                    //    MimeType = "image/jpeg", // Modify the MIME type if necessary
-                    //    PictureType = PictureType.FrontCover // Modify the picture type if necessary
-                    //};
-
-                    //tag.Pictures.Clear();
-                    //tag.Pictures.Add(pictureFrame);
-
-                    tag.Genre = song.Genre;
-
-                    tag.Lyrics.Clear();
-                    tag.Lyrics.Add(song.Lyrics);
-
-                    tag.Lyricists.Value.Clear();
-                    tag.Lyricists.Value.Add(song.Lyricist);
-
-                    // Neither of them work with V2, nothing I can do
-
-                    mp3.WriteTag(tag, Id3Version.V1X, WriteConflictAction.Replace);
-
-
-
-
-
-
-
-
-
-                    //mp3.UpdateTag(tag);
+                    mp3.Save();
+                }
+                finally
+                {
+                    //mp3?.Dispose();
                 }
 
                 processedSongs++;
 
                 // Report progress if needed
-                //double progressPercentage = (double)processedSongs / totalSongs * 100;
-                //(sender as BackgroundWorker)?.ReportProgress((int)progressPercentage);
+                // double progressPercentage = (double)processedSongs / totalSongs * 100;
+                // (sender as BackgroundWorker)?.ReportProgress((int)progressPercentage);
             }
         }
 

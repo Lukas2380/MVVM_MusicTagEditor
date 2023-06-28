@@ -20,13 +20,28 @@ C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEdito
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\HtmlAgilityPack.pdb
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\HtmlAgilityPack.xml
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\Newtonsoft.Json.xml
-C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\Data.dll
-C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\Common.dll
-C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\Data.pdb
-C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\Common.pdb
-C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\TagLibSharp.dll
-C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\TagLibSharp.pdb
-C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\TagLibSharp.xml
-C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\EntityFramework.dll
-C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\Data.dll.config
-C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\EntityFramework.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\bin\Debug\Services.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\bin\Debug\Services.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\bin\Debug\HtmlAgilityPack.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\bin\Debug\JetBrains.Annotations.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\bin\Debug\Newtonsoft.Json.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\bin\Debug\HtmlAgilityPack.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\bin\Debug\JetBrains.Annotations.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\bin\Debug\Microsoft.WindowsAPICodePack.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\bin\Debug\Newtonsoft.Json.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\obj\Debug\Services.csproj.AssemblyReference.cache
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\obj\Debug\Services.csproj.CopyComplete
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\obj\Debug\Services.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\obj\Debug\Services.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\bin\Debug\ATL.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\bin\Debug\Common.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\bin\Debug\Data.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\bin\Debug\Common.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\bin\Debug\Data.pdb

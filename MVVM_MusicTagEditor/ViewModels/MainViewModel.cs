@@ -63,7 +63,7 @@ namespace MVVM_MusicTagEditor.ViewModels
 
             // Init songViewTemplate and model
             this.songViewTemplate = new SongViewTemplate();
-            
+
             // Init theme
             this.IsDarkTheme = Application.Current.Resources.Source.ToString().Contains("dark") ? false : true;
             this.MenuVisibility = "Collapsed";
@@ -80,7 +80,7 @@ namespace MVVM_MusicTagEditor.ViewModels
         #endregion
 
         #region ------------------------- Properties, Indexers ----------------------------------------------
-        
+
         public ICommand SongViewCommand { get; private set; }
         public ICommand InfoViewCommand { get; private set; }
         public ICommand ToggleThemeCommand { get; private set; }
@@ -133,10 +133,10 @@ namespace MVVM_MusicTagEditor.ViewModels
         public bool IsDarkTheme
         {
             get { return this.isDarkTheme; }
-            set 
-            { 
+            set
+            {
                 if (this.isDarkTheme != value)
-                { this.isDarkTheme = value;}
+                { this.isDarkTheme = value; }
             }
         }
 
@@ -210,7 +210,7 @@ namespace MVVM_MusicTagEditor.ViewModels
         private void EditWindow_Closing(object sender, CancelEventArgs e)
         {
             this.EditSelectionCanExecute = true;
-            
+
             //set the mainwindow to be in the foreground
             var mainWindow = Application.Current.MainWindow;
             mainWindow.WindowState = WindowState.Normal;

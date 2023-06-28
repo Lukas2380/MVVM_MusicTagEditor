@@ -4,3 +4,9 @@ C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEdito
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Common\obj\Debug\Common.dll
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Common\obj\Debug\Common.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\bin\Debug\Common.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\bin\Debug\Common.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Common\obj\Debug\Common.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Common\obj\Debug\Common.pdb

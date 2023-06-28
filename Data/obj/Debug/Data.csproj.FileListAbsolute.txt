@@ -5,6 +5,10 @@ C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEdito
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Data\obj\Debug\Data.csproj.CopyComplete
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Data\obj\Debug\Data.dll
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Data\obj\Debug\Data.pdb
-C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\bin\Debug\Data.dll.config
-C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Data\obj\Debug\Data.Migrations.InitialCreate.resources
-C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Data\obj\Debug\Data.csproj.GenerateResource.cache
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\bin\Debug\Data.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\bin\Debug\Data.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Data\obj\Debug\Data.csproj.AssemblyReference.cache
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Data\obj\Debug\Data.csproj.CopyComplete
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Data\obj\Debug\Data.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Data\obj\Debug\Data.pdb

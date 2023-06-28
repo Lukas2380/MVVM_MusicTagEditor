@@ -57,7 +57,7 @@ namespace Services.FetchMetadata
         private int? releaseYear;
         private string album;
         private string lyrics;
-        private BitmapImage albumCover = null;
+        private BitmapImage albumCover;
         private string coverUrl;
         private List<string> websites = new List<string>();
         private string songUrl;
@@ -159,14 +159,14 @@ namespace Services.FetchMetadata
         /// Fetches metadata information for the song async.
         /// </summary>
         private async Task FetchMetadataInformationAsync()
-        {
+        {   
             FetchJsonResponseBody();
             FetchInitialTags();
             FetchSongWebPage();
+            FetchAlbumCover();
             FetchReleaseYear();
             FetchAlbum();
             FetchLyrics();
-            await FetchAlbumCover();
         }
 
         /// <summary>
@@ -309,11 +309,10 @@ namespace Services.FetchMetadata
         /// <summary>
         /// Fetches the album cover image for the song asynchronously.
         /// </summary>
-        private async Task FetchAlbumCover()
+        private void FetchAlbumCover()
         {
-            AlbumCover = await BitMapImageHelper.CreateBitmapImageFromUrl(CoverUrl);
+            this.AlbumCover = BitMapImageHelper.CreateBitmapImageFromUrl(CoverUrl);
         }
-
         #endregion
     }
 

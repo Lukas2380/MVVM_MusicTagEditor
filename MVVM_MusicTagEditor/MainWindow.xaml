@@ -51,7 +51,7 @@
             </DockPanel>
 
             <Grid>
-                <Grid.ColumnDefinitions>    
+                <Grid.ColumnDefinitions>
                     <ColumnDefinition MinWidth="300" Width="*"/>
                     <ColumnDefinition MaxWidth="500"/>
                 </Grid.ColumnDefinitions>

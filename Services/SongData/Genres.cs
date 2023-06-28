@@ -1,5 +1,4 @@
-﻿using Id3;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -218,12 +217,12 @@ namespace Services.SongData
         /// </summary>
         /// <param name="tag">The Id3Tag from a mp3 file.</param>
         /// <returns>Returns the string of the genre.</returns>
-        public static string ToString(Id3Tag tag)
-        {
-            string genreName = tag.Genre.ToString();
-            genreName = GetActualString(genreName);
-            return genreName;
-        }
+        //public static string ToString(Id3Tag tag)
+        //{
+        //    string genreName = tag.Genre.ToString();
+        //    genreName = GetActualString(genreName);
+        //    return genreName;
+        //}
 
         /// <summary>
         /// The GetActualString method is for converting the genre from the mp3 file to the coorilating strign for it.

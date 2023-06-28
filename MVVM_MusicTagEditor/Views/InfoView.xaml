@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:MVVM_MusicTagEditor.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" x:Name="window">
-    
+
     <TabControl>
         <TabItem Header="General" FontSize="14">
             <ScrollViewer VerticalScrollBarVisibility="Auto">
@@ -20,14 +20,14 @@
                                 <Label Content="Artist(s): " FontWeight="Black" Margin="0 0.2"/>
                                 <Label Content="Year: " FontWeight="Black" Margin="0 0.2"/>
                                 <Label Content="Genre: " FontWeight="Black" Margin="0 0.2"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Vertical" Grid.Column="1">
-                            <Label Content="{Binding Path=Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                            <Label Content="{Binding Path=AlbumName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                            <Label Content="{Binding Path=Artists, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                            <Label Content="{Binding Path=Year, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                            <Label Content="{Binding Path=Genre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                        </StackPanel>
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical" Grid.Column="1">
+                                <Label Content="{Binding Path=Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Label Content="{Binding Path=AlbumName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Label Content="{Binding Path=Artists, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Label Content="{Binding Path=Year, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Label Content="{Binding Path=Genre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            </StackPanel>
                         </StackPanel>
                     </Grid>
                 </StackPanel>

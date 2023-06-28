@@ -1,9 +1,11 @@
 ﻿using Common.NotifyPropertyChanged;
 using System;
 using System.Linq;
+using System.Net.Mail;
 using System.Security.Policy;
 using System.Windows;
 using System.Windows.Media.Imaging;
+using ATL;
 
 namespace Data
 {
@@ -131,7 +133,7 @@ namespace Data
                 }
             }
         }
-        
+
         /// <summary>
         /// Gets or sets the year of a song. 
         /// The int? means that the integer can be zero.
@@ -153,7 +155,7 @@ namespace Data
         }
 
         /// <summary>
-        /// Gets or sets the albumcover as a <see cref="BitmapImage"/> of a song.
+        /// Gets or sets the albumcover as a <see cref="PictureInfo"/> of a song.
         /// </summary>
         public BitmapImage AlbumCover
         {
