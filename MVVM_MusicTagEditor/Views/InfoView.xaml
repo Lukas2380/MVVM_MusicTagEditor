@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="MVVM_MusicTagEditor.Views.InfoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MVVM_MusicTagEditor.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" x:Name="window">
+
+    <TabControl>
+        <TabItem Header="General" FontSize="14">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <Image Source="{Binding AlbumCover}" Margin="0 20 0 0" Width="200" Height="200" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+                    <Grid HorizontalAlignment="Center" Margin="0 20 0 0">
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Vertical" Grid.Column="0" HorizontalAlignment="Center">
+                                <Label Content="Title:" FontWeight="Black" Margin="0 0.2"/>
+                                <Label Content="Album: " FontWeight="Black" Margin="0 0.2"/>
+                                <Label Content="Artist(s): " FontWeight="Black" Margin="0 0.2"/>
+                                <Label Content="Year: " FontWeight="Black" Margin="0 0.2"/>
+                                <Label Content="Genre: " FontWeight="Black" Margin="0 0.2"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical" Grid.Column="1">
+                                <Label Content="{Binding Path=Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Label Content="{Binding Path=AlbumName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Label Content="{Binding Path=Artists, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Label Content="{Binding Path=Year, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Label Content="{Binding Path=Genre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </ScrollViewer>
+        </TabItem>
+
+        <TabItem Header="Lyrics">
+            <DockPanel x:Name="dpanel">
+                <StackPanel Orientation="Horizontal" Margin="0 50 0 0" DockPanel.Dock="Top">
+                    <Label Content="Lyricist: "/>
+                    <TextBlock Width="auto" MinWidth="100" Margin="10 4 0 0"
+                             Text="{Binding Path=Lyricist, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+                <TextBlock ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="0 20 0 0" Background="{DynamicResource SecondaryColor}" 
+                        Grid.Row="0" DockPanel.Dock="Top" TextAlignment="Center" 
+                        Text="{Binding Path=Lyrics, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </DockPanel>
+        </TabItem>
+    </TabControl>
+</UserControl>
+

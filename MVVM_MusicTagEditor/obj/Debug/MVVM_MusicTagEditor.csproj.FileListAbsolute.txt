@@ -1,0 +1,204 @@
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\MVVM_MusicTagEditor.exe.config
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\MVVM_MusicTagEditor.exe
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\MVVM_MusicTagEditor.pdb
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.csproj.AssemblyReference.cache
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.csproj.SuggestedBindingRedirects.cache
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\MainWindow.g.cs
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\App.g.cs
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor_MarkupCompile.cache
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor_MarkupCompile.lref
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\MainWindow.baml
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.g.resources
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.Properties.Resources.resources
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.csproj.GenerateResource.cache
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.csproj.CoreCompileInputs.cache
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.exe
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.pdb
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\Views\InfoView.g.cs
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\Views\InfoView.baml
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\Views\SongView.g.cs
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\Views\SongView.baml
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Common.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Data.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Microsoft.Practices.Prism.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Common.pdb
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Data.pdb
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Microsoft.Practices.Prism.pdb
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Microsoft.Practices.Prism.xml
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.csproj.CopyComplete
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\System.Drawing.Common.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\System.Drawing.Common.xml
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\ControlzEx.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\MahApps.Metro.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\MaterialDesignColors.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\MaterialDesignThemes.MahApps.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\ControlzEx.pdb
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\ControlzEx.xml
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\MaterialDesignColors.pdb
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\MaterialDesignThemes.MahApps.pdb
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\App.baml
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Id3.Net.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\JetBrains.Annotations.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Id3.Net.xml
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\JetBrains.Annotations.xml
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor_Content.g.cs
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\ResourceDictionaries\DarkTheme.baml
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\ResourceDictionaries\LightTheme.baml
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Services.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Services.pdb
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\Views\SongViewTemplate.g.cs
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\Views\SongViewTemplate.baml
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Microsoft.WindowsAPICodePack.xml
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\Views\EditWindowView.baml
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\Views\EditWindowView.g.cs
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Newtonsoft.Json.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\HtmlAgilityPack.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\Newtonsoft.Json.xml
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\HtmlAgilityPack.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\MVVM_MusicTagEditor.exe.config
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\MVVM_MusicTagEditor.exe
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\MVVM_MusicTagEditor.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\Common.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\ControlzEx.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\Data.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\Id3.Net.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\JetBrains.Annotations.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\MahApps.Metro.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\MaterialDesignColors.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\MaterialDesignThemes.MahApps.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\Microsoft.Practices.Prism.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\Services.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\System.Drawing.Common.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\Newtonsoft.Json.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\HtmlAgilityPack.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\Services.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\Common.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\ControlzEx.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\ControlzEx.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\Data.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\Id3.Net.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\JetBrains.Annotations.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\MaterialDesignColors.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\MaterialDesignThemes.MahApps.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\Microsoft.Practices.Prism.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\Microsoft.Practices.Prism.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\Microsoft.WindowsAPICodePack.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\System.Drawing.Common.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\Newtonsoft.Json.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\HtmlAgilityPack.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.csproj.AssemblyReference.cache
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.csproj.SuggestedBindingRedirects.cache
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\MainWindow.g.cs
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\Views\EditWindowView.g.cs
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\Views\InfoView.g.cs
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\Views\SongView.g.cs
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\Views\SongViewTemplate.g.cs
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\App.g.cs
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor_Content.g.cs
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor_MarkupCompile.cache
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor_MarkupCompile.lref
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\App.baml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\MainWindow.baml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\ResourceDictionaries\DarkTheme.baml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\ResourceDictionaries\LightTheme.baml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\Views\EditWindowView.baml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\Views\InfoView.baml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\Views\SongView.baml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\Views\SongViewTemplate.baml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.g.resources
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.Properties.Resources.resources
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.csproj.GenerateResource.cache
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.csproj.CoreCompileInputs.cache
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.csproj.CopyComplete
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.exe
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\ATL.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\MVVM_MusicTagEditor.exe.config
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\MVVM_MusicTagEditor.exe
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\MVVM_MusicTagEditor.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\ATL.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\Common.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\ControlzEx.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\Data.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\Id3.Net.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\JetBrains.Annotations.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\MahApps.Metro.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\MaterialDesignColors.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\MaterialDesignThemes.MahApps.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\Microsoft.Practices.Prism.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\Services.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\System.Drawing.Common.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\Newtonsoft.Json.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\HtmlAgilityPack.dll
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\Services.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\Common.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\ControlzEx.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\ControlzEx.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\Data.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\Id3.Net.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\JetBrains.Annotations.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\MaterialDesignColors.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\MaterialDesignThemes.MahApps.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\Microsoft.Practices.Prism.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\Microsoft.Practices.Prism.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\Microsoft.WindowsAPICodePack.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\System.Drawing.Common.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\Newtonsoft.Json.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\HtmlAgilityPack.xml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.csproj.AssemblyReference.cache
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.csproj.SuggestedBindingRedirects.cache
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\MainWindow.g.cs
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\Views\EditWindowView.g.cs
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\Views\InfoView.g.cs
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\Views\SongView.g.cs
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\Views\SongViewTemplate.g.cs
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\App.g.cs
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor_Content.g.cs
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor_MarkupCompile.cache
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor_MarkupCompile.lref
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\App.baml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\MainWindow.baml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\ResourceDictionaries\DarkTheme.baml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\ResourceDictionaries\LightTheme.baml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\Views\EditWindowView.baml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\Views\InfoView.baml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\Views\SongView.baml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\Views\SongViewTemplate.baml
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.g.resources
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.Properties.Resources.resources
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.csproj.GenerateResource.cache
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.csproj.CoreCompileInputs.cache
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.csproj.CopyComplete
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.exe
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.pdb
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\bin\Debug\ATL.dll

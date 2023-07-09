@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVM_MusicTagEditor", "MVVM_MusicTagEditor\MVVM_MusicTagEditor.csproj", "{E7821EB4-EC1A-4593-941B-684CBD91F384}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6C3ED08B-BFD0-4E15-8005-A29DCB9DA0DB} = {6C3ED08B-BFD0-4E15-8005-A29DCB9DA0DB}
+		{77560357-5911-4D3A-9CCA-1B7C566B03F4} = {77560357-5911-4D3A-9CCA-1B7C566B03F4}
+		{AC215AF3-EAE1-4F43-8291-3832E8718559} = {AC215AF3-EAE1-4F43-8291-3832E8718559}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{77560357-5911-4D3A-9CCA-1B7C566B03F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{AC215AF3-EAE1-4F43-8291-3832E8718559}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EAD7954F-A423-41E3-8D7D-504ABE51F75C}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{6C3ED08B-BFD0-4E15-8005-A29DCB9DA0DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7821EB4-EC1A-4593-941B-684CBD91F384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7821EB4-EC1A-4593-941B-684CBD91F384}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7821EB4-EC1A-4593-941B-684CBD91F384}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7821EB4-EC1A-4593-941B-684CBD91F384}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77560357-5911-4D3A-9CCA-1B7C566B03F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77560357-5911-4D3A-9CCA-1B7C566B03F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77560357-5911-4D3A-9CCA-1B7C566B03F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77560357-5911-4D3A-9CCA-1B7C566B03F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC215AF3-EAE1-4F43-8291-3832E8718559}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC215AF3-EAE1-4F43-8291-3832E8718559}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC215AF3-EAE1-4F43-8291-3832E8718559}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC215AF3-EAE1-4F43-8291-3832E8718559}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C3ED08B-BFD0-4E15-8005-A29DCB9DA0DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C3ED08B-BFD0-4E15-8005-A29DCB9DA0DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C3ED08B-BFD0-4E15-8005-A29DCB9DA0DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C3ED08B-BFD0-4E15-8005-A29DCB9DA0DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DAB31711-E49A-4C89-964B-23E7CD06AB36}
+	EndGlobalSection
+EndGlobal

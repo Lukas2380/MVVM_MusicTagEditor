@@ -1,0 +1,31 @@
+﻿<UserControl
+    x:Class="MVVM_MusicTagEditor.Views.SongView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:MVVM_MusicTagEditor.Views"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    mc:Ignorable="d" 
+    d:DesignHeight="450" d:DesignWidth="800" x:Name="stackP">
+    <DockPanel Margin="10">
+        <DataGrid x:Name="dg" ItemsSource="{Binding Songs}" SelectedItem="{Binding SelectedSong}"
+                  AutoGenerateColumns="False" MaxHeight="{Binding ElementName=stackP, Path=ActualHeight}" KeyboardNavigation.DirectionalNavigation="Contained" 
+                  DockPanel.Dock="Top" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" HorizontalScrollBarVisibility="Hidden">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction CommandParameter="{Binding ElementName=dg, Path=SelectedItems}" Command="{Binding SelectedItemsCommand }" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Title" Binding="{Binding Title}" Width="4*" MinWidth="180"/>
+                <DataGridTextColumn Header="Artist" Binding="{Binding Artists}" Width="4*" MinWidth="180"/>
+                <DataGridTextColumn Header="Album" Binding="{Binding AlbumName}" Width="2*"/>
+                <DataGridTextColumn Header="Year" Binding="{Binding Year}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <ProgressBar VerticalAlignment="Bottom" Height="10" Value="{Binding ProgressBarValue}" Minimum="0" Maximum="100" DockPanel.Dock="Bottom" Style="{StaticResource MaterialDesignLinearProgressBar}" materialDesign:TransitionAssist.DisableTransitions="True"/>
+    </DockPanel>
+</UserControl>
