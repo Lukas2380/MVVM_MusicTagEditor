@@ -8,6 +8,7 @@ using Services.SongData;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -33,6 +34,7 @@ namespace MVVM_MusicTagEditor.ViewModels
             this.OpenWebsitesCommand = new ActionCommand(this.OpenWebsitesCommandExecuteAsync, this.OpenWebsitesCommandCanExecute);
             this.PreviousSongCommand = new ActionCommand(this.PreviousSongCommandExecute, this.PreviousSongCommandCanExecute);
             this.NextSongCommand = new ActionCommand(this.NextSongCommandExecute, this.NextSongCommandCanExecute);
+            this.PasteAlbumCoverCommand = new ActionCommand(this.PasteAlbumCoverExecute, this.PasteAlbumCoverCanExecute);
 
             this.MenuVisibility = "Collapsed";
 
@@ -157,6 +159,11 @@ namespace MVVM_MusicTagEditor.ViewModels
         /// Gets the command for the next song.
         /// </summary>
         public ICommand NextSongCommand { get; private set; }
+
+        /// <summary>
+        /// Gets the command for the paste action.
+        /// </summary>
+        public ICommand PasteAlbumCoverCommand { get; private set; }
 
         #endregion
 
@@ -371,6 +378,33 @@ namespace MVVM_MusicTagEditor.ViewModels
             this.CurrentSong = currentSelectedItems[selectedSongNr];
             this.OnPropertyChanged(nameof(this.CurrentSong));
             SongToEditChanged();
+        }
+
+        #endregion
+
+        #region PasteAlbumCoverCommand
+
+        /// <summary>
+        /// Determines whether the PasteAlbumCoverCommand can be executed.
+        /// </summary>
+        /// <param name="arg">The command parameter.</param>
+        /// <returns>True</returns>
+        private bool PasteAlbumCoverCanExecute(object arg)
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// Executes the PasteAlbumCoverCommand.
+        /// </summary>
+        /// <param name="obj">The command parameter.</param>
+        private void PasteAlbumCoverExecute(object obj)
+        {
+            if (Clipboard.ContainsImage())
+            {
+                FetchedSong.AlbumCover = BitMapImageHelper.GetClipBoardImage();
+                OnPropertyChanged(nameof(FetchedSong));
+            }
         }
 
         #endregion

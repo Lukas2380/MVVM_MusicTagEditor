@@ -4,9 +4,7 @@ C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEdito
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\obj\Debug\Services.dll
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\obj\Debug\Services.pdb
-C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\Id3.Net.dll
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\JetBrains.Annotations.dll
-C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\Id3.Net.xml
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\JetBrains.Annotations.xml
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\obj\Debug\Services.csproj.CopyComplete
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\Microsoft.WindowsAPICodePack.dll
@@ -70,3 +68,8 @@ C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\S
 C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\Services\obj\Debug\Services.csproj.CopyComplete
 C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\Services\obj\Debug\Services.dll
 C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\Services\obj\Debug\Services.pdb
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\ATL.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\Common.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\Data.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\Common.pdb
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\Data.pdb

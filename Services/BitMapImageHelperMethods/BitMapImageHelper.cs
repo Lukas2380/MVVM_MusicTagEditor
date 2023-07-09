@@ -15,46 +15,26 @@ namespace Services.BitMapImageHelperMethods
 {
     public class BitMapImageHelper
     {
-        public static BitmapImage ConvertImageToBitmapImage(byte[] imageData)
+        public static BitmapImage GetClipBoardImage()
         {
-            //using (MemoryStream memoryStream = new MemoryStream(imageData))
-            //{
-            //    using (Image image = Image.FromStream(memoryStream))
-            //    {
-            //        Bitmap bitmap = new Bitmap(image);
-            //        BitmapImage bitmapImage = new BitmapImage();
+            var bitmapSource = Clipboard.GetImage();
 
-            //        using (MemoryStream bitmapStream = new MemoryStream())
-            //        {
-            //            bitmap.Save(bitmapStream, ImageFormat.Png);
-            //            bitmapStream.Position = 0;
-
-            //            bitmapImage.BeginInit();
-            //            bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
-            //            bitmapImage.StreamSource = bitmapStream;
-            //            bitmapImage.EndInit();
-            //            bitmapImage.Freeze();
-            //        }
-
-            //        return bitmapImage;
-            //    }
-            //}
-            BitmapSource bitmapSource = Clipboard.GetImage();
-
-            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
-            MemoryStream memoryStream = new MemoryStream();
-            BitmapImage bImg = new BitmapImage();
-
+            // Convert BitmapSource to byte array
+            var encoder = new PngBitmapEncoder();
+            var memoryStream = new MemoryStream();
             encoder.Frames.Add(BitmapFrame.Create(bitmapSource));
             encoder.Save(memoryStream);
+            var imageData = memoryStream.ToArray();
 
-            memoryStream.Position = 0;
-            bImg.BeginInit();
-            bImg.StreamSource = memoryStream;
-            bImg.EndInit();
+            // Create a new BitmapImage from the byte array
+            var bitmapImage = new BitmapImage();
+            bitmapImage.BeginInit();
+            bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+            bitmapImage.StreamSource = new MemoryStream(imageData);
+            bitmapImage.EndInit();
 
-            memoryStream.Close();
-            return bImg;
+            // Set the AlbumCover property
+            return bitmapImage;
         }
 
 
