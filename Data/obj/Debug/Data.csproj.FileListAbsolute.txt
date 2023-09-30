@@ -19,3 +19,10 @@ C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\D
 C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\Data\obj\Debug\Data.csproj.CopyComplete
 C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\Data\obj\Debug\Data.dll
 C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\Data\obj\Debug\Data.pdb
+D:\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\bin\Debug\Data.dll
+D:\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\bin\Debug\Data.pdb
+D:\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Data\obj\Debug\Data.csproj.AssemblyReference.cache
+D:\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+D:\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Data\obj\Debug\Data.csproj.CopyComplete
+D:\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Data\obj\Debug\Data.dll
+D:\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Data\obj\Debug\Data.pdb

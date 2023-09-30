@@ -17,14 +17,14 @@ namespace Services.SongData
     {
         public static List<Song> EditedSongs { get; set; } = new List<Song>();
 
-        public static void SaveChanges(List<Song> songs)
+        public static void SaveChanges()
         {
             BackgroundWorker saveWorker = new BackgroundWorker();
             saveWorker.DoWork += SaveWorker_DoWork;
             saveWorker.RunWorkerCompleted += SaveWorker_RunWorkerCompleted;
 
             // Start the background worker to save the changes
-            saveWorker.RunWorkerAsync(songs);
+            saveWorker.RunWorkerAsync();
         }
 
         private static void SaveWorker_DoWork(object sender, DoWorkEventArgs e)
@@ -55,7 +55,7 @@ namespace Services.SongData
                     // Add album cover picture
                     if (song.AlbumCover != null)
                     {
-                        var pictureInfo = ATL.PictureInfo.fromBinaryData(ConvertBitmapImageToByteArray(song.AlbumCover), ATL.PictureInfo.PIC_TYPE.Front);
+                        var pictureInfo = ATL.PictureInfo.fromBinaryData(ConvertBitmapImageToByteArray(song.AlbumCover));
                         mp3.EmbeddedPictures.Add(pictureInfo);
                     }
 
