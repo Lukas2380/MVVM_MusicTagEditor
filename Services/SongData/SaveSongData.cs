@@ -41,6 +41,9 @@ namespace Services.SongData
                     mp3.Remove(MetaDataIOFactory.TagType.ID3V1);
                     mp3.Remove(MetaDataIOFactory.TagType.ID3V2);
 
+                    // Set the ID3v2 tag version (2, 3, or 4)
+                    Settings.ID3v2_tagSubVersion = 3;
+
                     mp3.Title = song.Title;
                     mp3.Artist = song.Artists;
                     mp3.Album = song.AlbumName;
@@ -55,15 +58,22 @@ namespace Services.SongData
                     // Add album cover picture
                     if (song.AlbumCover != null)
                     {
-                        var pictureInfo = ATL.PictureInfo.fromBinaryData(ConvertBitmapImageToByteArray(song.AlbumCover));
+                        // Convert the AlbumCover to a byte array
+                        byte[] imageBytes = ConvertBitmapImageToByteArray(song.AlbumCover);
+
+                        // Set the album cover picture info
+                        var pictureInfo = PictureInfo.fromBinaryData(imageBytes, PictureInfo.PIC_TYPE.Front, MetaDataIOFactory.TagType.ID3V2); // if not work, use pictype generic
+                        pictureInfo.NativeFormat = Commons.ImageFormat.Jpeg;
+
+                        // Add the album cover picture
                         mp3.EmbeddedPictures.Add(pictureInfo);
                     }
 
                     mp3.Save();
                 }
-                finally
+                catch (Exception ex)
                 {
-                    //mp3?.Dispose();
+                    throw new Exception(ex.Message);
                 }
 
                 processedSongs++;
@@ -73,6 +83,7 @@ namespace Services.SongData
                 // (sender as BackgroundWorker)?.ReportProgress((int)progressPercentage);
             }
         }
+
 
         private static void SaveWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
