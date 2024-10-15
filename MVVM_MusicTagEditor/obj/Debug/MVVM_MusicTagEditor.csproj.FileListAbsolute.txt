@@ -133,6 +133,7 @@ C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\M
 C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.exe
 C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.pdb
 C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\bin\Debug\ATL.dll
+<<<<<<< HEAD
 C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\MVVM_MusicTagEditor.exe.config
 C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\MVVM_MusicTagEditor.exe
 C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor\bin\Debug\MVVM_MusicTagEditor.pdb
@@ -270,3 +271,5 @@ D:\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_Music
 D:\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.csproj.CopyComplete
 D:\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.exe
 D:\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\MVVM_MusicTagEditor.pdb
+=======
+>>>>>>> master

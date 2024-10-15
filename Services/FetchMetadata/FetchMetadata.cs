@@ -34,8 +34,13 @@ namespace Services.FetchMetadata
             this.artist = artist;
             this.song = song;
 
+<<<<<<< HEAD
             this.songUrl = "https://api.genius.com/search?q=" + artist + song;
             this.Websites.Add("https://www.google.com/search?q=" + this.Song + "+" + this.Artist);
+=======
+            this.Websites.Add("https://www.google.com/search?q=" + this.Song + "+" + this.Artist);
+            this.songUrl = "https://api.genius.com/search?q=" + artist + song;
+>>>>>>> master
 
             FetchMetadataInformationAsync();
         }

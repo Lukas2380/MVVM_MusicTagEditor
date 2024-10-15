@@ -4,7 +4,13 @@ C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEdito
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\obj\Debug\Services.dll
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\obj\Debug\Services.pdb
+<<<<<<< HEAD
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\JetBrains.Annotations.dll
+=======
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\Id3.Net.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\JetBrains.Annotations.dll
+C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\Id3.Net.xml
+>>>>>>> master
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\JetBrains.Annotations.xml
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\obj\Debug\Services.csproj.CopyComplete
 C:\Users\lukas\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\bin\Debug\Microsoft.WindowsAPICodePack.dll
@@ -43,6 +49,7 @@ C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\bin\Debug\Common.dll
 C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\bin\Debug\Data.dll
 C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\bin\Debug\Common.pdb
 C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Services\bin\Debug\Data.pdb
+<<<<<<< HEAD
 C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\Services\bin\Debug\Services.dll
 C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\Services\bin\Debug\Services.pdb
 C:\Users\lukas\Downloads\MVVM_MusicTagEditor-master\MVVM_MusicTagEditor-master\Services\bin\Debug\ATL.dll
@@ -98,3 +105,5 @@ D:\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\o
 D:\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\obj\Debug\Services.csproj.CopyComplete
 D:\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\obj\Debug\Services.dll
 D:\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\Services\obj\Debug\Services.pdb
+=======
+>>>>>>> master

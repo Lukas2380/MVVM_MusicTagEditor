@@ -17,14 +17,22 @@ namespace Services.SongData
     {
         public static List<Song> EditedSongs { get; set; } = new List<Song>();
 
+<<<<<<< HEAD
         public static void SaveChanges()
+=======
+        public static void SaveChanges(List<Song> songs)
+>>>>>>> master
         {
             BackgroundWorker saveWorker = new BackgroundWorker();
             saveWorker.DoWork += SaveWorker_DoWork;
             saveWorker.RunWorkerCompleted += SaveWorker_RunWorkerCompleted;
 
             // Start the background worker to save the changes
+<<<<<<< HEAD
             saveWorker.RunWorkerAsync();
+=======
+            saveWorker.RunWorkerAsync(songs);
+>>>>>>> master
         }
 
         private static void SaveWorker_DoWork(object sender, DoWorkEventArgs e)
@@ -41,9 +49,12 @@ namespace Services.SongData
                     mp3.Remove(MetaDataIOFactory.TagType.ID3V1);
                     mp3.Remove(MetaDataIOFactory.TagType.ID3V2);
 
+<<<<<<< HEAD
                     // Set the ID3v2 tag version (2, 3, or 4)
                     Settings.ID3v2_tagSubVersion = 3;
 
+=======
+>>>>>>> master
                     mp3.Title = song.Title;
                     mp3.Artist = song.Artists;
                     mp3.Album = song.AlbumName;
@@ -58,6 +69,7 @@ namespace Services.SongData
                     // Add album cover picture
                     if (song.AlbumCover != null)
                     {
+<<<<<<< HEAD
                         // Convert the AlbumCover to a byte array
                         byte[] imageBytes = ConvertBitmapImageToByteArray(song.AlbumCover);
 
@@ -66,14 +78,23 @@ namespace Services.SongData
                         pictureInfo.NativeFormat = Commons.ImageFormat.Jpeg;
 
                         // Add the album cover picture
+=======
+                        var pictureInfo = ATL.PictureInfo.fromBinaryData(ConvertBitmapImageToByteArray(song.AlbumCover), ATL.PictureInfo.PIC_TYPE.Front);
+>>>>>>> master
                         mp3.EmbeddedPictures.Add(pictureInfo);
                     }
 
                     mp3.Save();
                 }
+<<<<<<< HEAD
                 catch (Exception ex)
                 {
                     throw new Exception(ex.Message);
+=======
+                finally
+                {
+                    //mp3?.Dispose();
+>>>>>>> master
                 }
 
                 processedSongs++;
@@ -84,7 +105,10 @@ namespace Services.SongData
             }
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
         private static void SaveWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             // Perform any necessary actions upon completion

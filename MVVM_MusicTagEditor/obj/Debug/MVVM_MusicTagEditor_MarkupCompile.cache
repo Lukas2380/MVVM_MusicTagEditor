@@ -4,16 +4,28 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 D:\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\obj\Debug\
+=======
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\obj\Debug\
+>>>>>>> master
 MVVM_MusicTagEditor
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 D:\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor\MVVM_MusicTagEditor\App.xaml
 7-910426377
 1-1600025693
 18-600014999
 34284272993
+=======
+C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\MVVM_MusicTagEditor\App.xaml
+7-910426377
+1-1600025693
+18-600014999
+341978371303
+>>>>>>> master
 MainWindow.xaml;ResourceDictionaries\DarkTheme.xaml;ResourceDictionaries\LightTheme.xaml;Views\EditWindowView.xaml;Views\InfoView.xaml;Views\SongView.xaml;Views\SongViewTemplate.xaml;
 
 False
