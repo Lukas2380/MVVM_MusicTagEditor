@@ -1,0 +1,17 @@
+# Ignore Visual Studio specific files
+.vs/
+*.suo
+*.user
+
+# Ignore build outputs
+bin/
+obj/
+
+# Ignore caches and build logs
+*.cache
+*.pdb
+*.exe
+*.dll
+*.vsidx
+*.ilref
+*.ilk
