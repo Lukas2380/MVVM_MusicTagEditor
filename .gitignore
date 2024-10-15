@@ -1,0 +1,16 @@
+# Visual Studio temporary files
+.vs/
+*.suo
+
+# Build directories
+/bin
+/obj
+
+# Ignore caches and build logs
+*.cache
+*.pdb
+*.dll
+*.exe
+*.vsidx
+*.ilref
+*.ilk
