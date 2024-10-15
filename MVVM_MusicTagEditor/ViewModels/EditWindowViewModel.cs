@@ -8,7 +8,10 @@ using Services.SongData;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+<<<<<<< HEAD
 using System.IO;
+=======
+>>>>>>> master
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -34,7 +37,10 @@ namespace MVVM_MusicTagEditor.ViewModels
             this.OpenWebsitesCommand = new ActionCommand(this.OpenWebsitesCommandExecuteAsync, this.OpenWebsitesCommandCanExecute);
             this.PreviousSongCommand = new ActionCommand(this.PreviousSongCommandExecute, this.PreviousSongCommandCanExecute);
             this.NextSongCommand = new ActionCommand(this.NextSongCommandExecute, this.NextSongCommandCanExecute);
+<<<<<<< HEAD
             this.PasteAlbumCoverCommand = new ActionCommand(this.PasteAlbumCoverExecute, this.PasteAlbumCoverCanExecute);
+=======
+>>>>>>> master
 
             this.MenuVisibility = "Collapsed";
 
@@ -160,11 +166,14 @@ namespace MVVM_MusicTagEditor.ViewModels
         /// </summary>
         public ICommand NextSongCommand { get; private set; }
 
+<<<<<<< HEAD
         /// <summary>
         /// Gets the command for the paste action.
         /// </summary>
         public ICommand PasteAlbumCoverCommand { get; private set; }
 
+=======
+>>>>>>> master
         #endregion
 
         #region ------------------------- Commands ----------------------------------------------------------
@@ -381,6 +390,7 @@ namespace MVVM_MusicTagEditor.ViewModels
         }
 
         #endregion
+<<<<<<< HEAD
 
         #region PasteAlbumCoverCommand
 
@@ -408,6 +418,8 @@ namespace MVVM_MusicTagEditor.ViewModels
         }
 
         #endregion
+=======
+>>>>>>> master
         
         #endregion
 

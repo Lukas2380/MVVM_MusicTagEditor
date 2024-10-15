@@ -405,7 +405,11 @@ namespace MVVM_MusicTagEditor.ViewModels
         /// <param name="obj">The command parameter.</param>
         private void SaveChangesCommandExecute(object obj)
         {
+<<<<<<< HEAD
             SaveSongData.SaveChanges();
+=======
+            SaveSongData.SaveChanges(this.songViewModel.Songs.ToList());
+>>>>>>> master
         }
         #endregion
 
