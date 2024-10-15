@@ -10,3 +10,15 @@ C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Common\obj\Debug\Common.csproj.
 C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Common\obj\Debug\Common.dll
 C:\Users\lukas\Downloads\MVVM_MusicTagEditor_Lib\Common\obj\Debug\Common.pdb
+D:\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor - Clean\bin\Debug\Common.dll
+D:\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor - Clean\bin\Debug\Common.pdb
+D:\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor - Clean\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+D:\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor - Clean\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+D:\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor - Clean\Common\obj\Debug\Common.dll
+D:\OneDrive - HTBLuVA Mödling\Schule\56AAIFT\POS\MVVM_MusicTagEditor - Clean\Common\obj\Debug\Common.pdb
+D:\Programming\MVVM_MusicTagEditor\bin\Debug\Common.dll
+D:\Programming\MVVM_MusicTagEditor\bin\Debug\Common.pdb
+D:\Programming\MVVM_MusicTagEditor\Common\obj\Debug\Common.csproj.AssemblyReference.cache
+D:\Programming\MVVM_MusicTagEditor\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+D:\Programming\MVVM_MusicTagEditor\Common\obj\Debug\Common.dll
+D:\Programming\MVVM_MusicTagEditor\Common\obj\Debug\Common.pdb
